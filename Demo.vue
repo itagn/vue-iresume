@@ -2,6 +2,7 @@
   <div>
     <iresume :pData="resumeData" class="resume1" :pNode="resumeNode1"></iresume>
     <iresume :pData="resumeData" class="resume2" :pNode="resumeNode2"></iresume>
+    <iresume :pData="resumeData" class="resume3" :pNode="resumeNode3"></iresume>
   </div>
 </template>
 <script>
@@ -95,14 +96,15 @@ export default {
       className: '.resume2',
       theme: 'red'
     }
+    this.resumeNode3 = {
+      className: '.resume3',
+      theme: 'purple'
+    }
   }
 }
 </script>
 <style>
-.resume1, .resume2 {
-  position: relative;
-}
-.resume2 {
+.resume2, .resume3 {
   margin-top: 30px;
 }
 </style>

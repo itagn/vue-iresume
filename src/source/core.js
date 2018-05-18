@@ -14,11 +14,13 @@ export default {
     return {
       user: {},
       template: {},
-      scale: 1
+      scale: 1,
+      deviceMemory: 0
     }
   },
   created () {
     this.init()
+    this.checkNavigator()
   },
   mounted () {
     this.domStyle()
@@ -33,6 +35,10 @@ export default {
       let theme = 'blue'
       if (this.pNode && !!this.pNode.theme && Object.keys(themes).includes(theme)) theme = this.pNode.theme
       this.template = themes[theme]
+    },
+    checkNavigator () {
+      let { deviceMemory = -1 } = window.navigator
+      this.deviceMemory = deviceMemory
     },
     windowEvents () {
       let { className = '' } = this.pNode
@@ -89,13 +95,12 @@ export default {
       const leftDom = getDom(`${className} .iresume .iresume-left`),
         rightDom = getDom(`${className} .iresume .iresume-right`),
         baseDom = getDom(`${className}`)
-      let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight ,
-        pageWidth = document.body.scrollWidth || document.documentElement.scrollWidth,
-        screenHeight =  document.documentElement.clientHeight || document.body.clientHeight,
-        screenWidth =  document.documentElement.clientWidth || document.body.clientWidth,
+      let pageHeight = this.deviceMemory === -1 ? document.body.scrollHeight : document.documentElement.scrollHeight ,
+        pageWidth = this.deviceMemory === -1 ? document.body.scrollWidth : document.documentElement.scrollWidth,
+        screenHeight = this.deviceMemory === -1 ? document.body.clientHeight : document.documentElement.clientHeight,
+        screenWidth =  this.deviceMemory === -1 ? document.body.clientWidth : document.documentElement.clientWidth,
         currentHeight = pageHeight - baseDom.offsetTop
       let mainHeight = `${currentHeight}px`
-      if (screenWidth > 700 && currentHeight <= screenHeight) mainHeight = `${screenHeight * 0.98}px`
       baseDom.style.height = `${currentHeight}px`
       rightDom.style.height = leftDom.style.height = mainHeight
     },
