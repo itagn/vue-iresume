@@ -3,10 +3,15 @@
     <iresume :pData="resumeData" class="resume1" :pNode="resumeNode1"></iresume>
     <iresume :pData="resumeData" class="resume2" :pNode="resumeNode2"></iresume>
     <iresume :pData="resumeData" class="resume3" :pNode="resumeNode3"></iresume>
+    <iresume :pData="resumeData" class="resume4" :pNode="resumeNode4"></iresume>
+    <iresume :pData="resumeData" class="resume5" :pNode="resumeNode5"></iresume>
   </div>
 </template>
 <script>
 import Iresume from './src/vue-iresume'
+import bgImg from './img/bg.jpg'
+import bgImg1 from './img/bg1.jpg'
+import bgImg2 from './img/bg2.jpg'
 export default {
   data() {
     return {
@@ -65,7 +70,7 @@ export default {
         ],
         personalProjects: [
           {
-            name: '基于DES加密的即时聊天通信聊天系统',
+            name: '基于DES加密的即时通信聊天系统',
             startTime: '2017/1',
             endTime: '2017/5',
             introduction: '前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发',
@@ -94,17 +99,30 @@ export default {
     }
     this.resumeNode2 = {
       className: '.resume2',
-      theme: 'red'
+      theme: 'pink',
+      leftBackground: bgImg
     }
     this.resumeNode3 = {
       className: '.resume3',
+      theme: 'pink',
+      leftBackground: bgImg1,
+      rightBackground: bgImg2,
+      leftColor: '#334455',
+      rightColor: '#334455'
+    }
+    this.resumeNode4 = {
+      className: '.resume4',
       theme: 'purple'
+    }
+    this.resumeNode5 = {
+      className: '.resume5',
+      theme: 'orange'
     }
   }
 }
 </script>
 <style>
-.resume2, .resume3 {
+.resume2, .resume3, .resume4, .resume5 {
   margin-top: 30px;
 }
 </style>

@@ -52,19 +52,24 @@ export default {
       }
     },
     domStyle () {
-      let { className = '' } = this.pNode
+      let { className = '', leftBackground = '', leftColor = '', rightBackground = '', rightColor = '' } = this.pNode
       const { left, right } = this.template
+      let leftBg = left.bgColor, rightBg = right.bgColor
+      if (leftBackground !== '') leftBg = `url(${leftBackground}) repeat`
+      if (leftColor === '') leftColor = left.fontColor
+      if (rightBackground !== '') rightBg = `url(${rightBackground}) repeat`
+      if (rightColor === '') rightColor = right.fontColor
       const domArr = [
         { dom: '.iresume .iresume-left', style: [
-          { color: left.fontColor },
-          { backgroundColor: left.bgColor }
+          { color: leftColor },
+          { background: leftBg }
         ] },
         { dom: '.iresume .iresume-left .iresume-box-title', style: [
           { color: left.box.titleColor }
         ] },
         { dom: '.iresume .iresume-right', style: [
-          { color: right.fontColor },
-          { backgroundColor: right.bgColor }
+          { color: rightColor },
+          { background: rightBg }
         ] },
         { dom: '.iresume .iresume-right .iresume-infomation', style: [
           { color: right.box.infoColor }
@@ -73,7 +78,7 @@ export default {
           { color: right.box.titleColor }
         ] },
         { dom: '.iresume .iresume-right .iresume-hr', style: [
-          { backgroundColor: right.box.hrColor }
+          { background: right.box.hrColor }
         ] },
         { dom: '.iresume .iresume-right .iresume-project', style: [
           { color: right.box.project.titleColor }

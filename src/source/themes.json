@@ -25,7 +25,7 @@
             }
         }
     },
-    "red": {
+    "orange": {
         "left": {
             "bgColor": "#f17c67",
             "fontColor": "#fff",
@@ -73,6 +73,32 @@
                 },
                 "mini": {
                     "titleColor": "#8f1d78"
+                }
+            }
+        }
+    },
+    "pink": {
+        "left": {
+            "bgColor": "#fcadc3",
+            "fontColor": "#fff",
+            "box": {
+                "titleColor": "#fff"
+            }
+        },
+        "right": {
+            "bgColor": "#fff",
+            "fontColor": "#000",
+            "box": {
+                "infoColor": "#fbb0c5",
+                "titleColor": "#faabc1",
+                "hrColor": "#fcadc3",
+                "project": {
+                    "titleColor": "#faabc1",
+                    "urlColor": "#00a1d6",
+                    "timeColor": "#999"
+                },
+                "mini": {
+                    "titleColor": "#fbb0c5"
                 }
             }
         }

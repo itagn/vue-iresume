@@ -59,7 +59,7 @@
               <li v-for="(enterprise, i) in user.enterprises" :key="i">
                 <div>
                   <span class="iresume-project">{{ enterprise.name }}</span>
-                  <span class="iresume-enterprise-time">{{ enterprise.startTime }} ~ {{ enterprise.endTime }}</span>
+                  <span class="iresume-enterprise-time">({{ enterprise.startTime }} ~ {{ enterprise.endTime }})</span>
                 </div>
                 <div class="iresume-enterprise">
                   <div class="iresume-enterprise-title">工作内容</div>
@@ -87,7 +87,7 @@
                       <a @click="hrefTo(project.url)">链接</a>
                     </span>
                   </span>
-                  <span class="iresume-enterprise-time">{{ project.startTime }} ~ {{ project.endTime }}</span>
+                  <span class="iresume-enterprise-time">({{ project.startTime }} ~ {{ project.endTime }})</span>
                 </div>
                 <div class="iresume-box-box" v-if="project.introduction.length > 0">
                   <div class="iresume-mini-title iresume-mini">项目介绍</div>
@@ -113,7 +113,7 @@
                       <a @click="hrefTo(project.url)">链接</a>
                     </span>
                   </span>
-                  <span class="iresume-enterprise-time">{{ project.startTime }} ~ {{ project.endTime }}</span>
+                  <span class="iresume-enterprise-time">({{ project.startTime }} ~ {{ project.endTime }})</span>
                 </div>
                 <div class="iresume-box-box" v-if="project.introduction.length > 0">
                   <div class="iresume-mini-title iresume-mini">项目介绍</div>
