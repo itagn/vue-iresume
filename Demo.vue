@@ -42,7 +42,7 @@ export default {
         ],
         enterprises: [
           {
-            name: '中移物联网有限公司',
+            name: 'xxxx有限公司',
             startTime: '2017/7',
             endTime: '至今',
             jobs: [
@@ -79,6 +79,9 @@ export default {
           },
           {
             name: 'nodejs',
+            introduction: ''
+          },{
+            name: 'vuejs',
             introduction: ''
           }
         ]

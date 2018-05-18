@@ -1,6 +1,6 @@
 import avatars from './avatars.gif'
 import themes from './themes.json'
-import { getDom, getDoms, updateDom, throttle } from '../util/tool.js'
+import { getDom, updateDom, throttle } from '../util/tool.js'
 export default {
   props: {
     pData: {
@@ -28,10 +28,10 @@ export default {
   },
   methods: {
     init () {
-      let { user } = this.pData
+      let { user = {} } = this.pData
       this.user = Object.assign({}, user)
       this.user.avatars = !!this.user && !!this.user.avatars && this.user.avatars.length > 0 ? this.user.avatars : avatars
-      let theme = 'blue'  // default
+      let theme = 'blue'  // default theme
       if (this.pNode && !!this.pNode.theme && Object.keys(themes).includes(theme)) theme = this.pNode.theme
       this.template = themes[theme]
     },
@@ -84,17 +84,11 @@ export default {
         screenHeight =  document.documentElement.clientHeight || document.body.clientHeight,
         screenWidth =  document.documentElement.clientWidth || document.body.clientWidth,
         currentHeight = pageHeight - baseDom.offsetTop
-      let mainHeight = ''
-      if (parseInt(screenWidth) < 700) {
-        mainHeight = `${currentHeight}px`
-      } else {
+      let mainHeight = `${currentHeight}px`
+      if (screenWidth > 700) {
         let minWidth = Math.min(pageWidth, screenWidth)
         document.body.style.width = `${minWidth}px`
-        if (currentHeight <= screenHeight) {
-          mainHeight = `${screenHeight * 0.98}px`
-        } else {
-          mainHeight = `${currentHeight}px`
-        }
+        if (currentHeight <= screenHeight) mainHeight = `${screenHeight * 0.98}px`
       }
       baseDom.style.height = `${currentHeight}px`
       rightDom.style.height = leftDom.style.height = mainHeight
