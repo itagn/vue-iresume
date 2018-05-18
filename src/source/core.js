@@ -30,7 +30,7 @@ export default {
       let { user = {} } = this.pData
       this.user = Object.assign({}, user)
       this.user.avatars = !!this.user && !!this.user.avatars && this.user.avatars.length > 0 ? this.user.avatars : avatars
-      let theme = 'blue'  // default theme
+      let theme = 'blue'
       if (this.pNode && !!this.pNode.theme && Object.keys(themes).includes(theme)) theme = this.pNode.theme
       this.template = themes[theme]
     },
@@ -39,7 +39,7 @@ export default {
       const baseDom = getDom(`${className} .iresume`)
       grabToggle(baseDom)
       let { scale } = this
-      let speed = 0.1  //  scale speed
+      let speed = 0.1
       this.scale = scaleToggle(baseDom, scale, speed)
       window.onresize = () => {
         throttle(this.sameHeight, window)

@@ -40,7 +40,7 @@
 }
 .iresume-box .iresume-box-content {
   padding: 0 0 0 3%;
-  margin: 3% 0 0 0;
+  margin: 3% 0 0;
 }
 .iresume-box .iresume-enterprise-time{
   position: absolute;
@@ -54,11 +54,11 @@
   word-wrap: break-word;
 }
 .iresume-enterprise .iresume-enterprise-title {
-  padding: 3% 0 0 0;
+  padding: 3% 0 0;
   font-size: 1.2em;
 }
 .iresume-left .iresume-avatars {
-  padding: 20% 25% 5% 25%;
+  padding: 20% 25% 5%;
   width: 50%;
 }
 .iresume-avatars img {
@@ -67,7 +67,7 @@
 .iresume-left .iresume-username {
   font-size: 2em;
   text-align: center;
-  padding: 0 0 5%;
+  padding: 0 0 10%;
 }
 ul {
   padding: 0;

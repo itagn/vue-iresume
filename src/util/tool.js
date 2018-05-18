@@ -22,6 +22,28 @@ let throttle = (method, context) => {
   }, 500)
 }
 
+let initZIndex = (dom) => {
+  const resumes = getDoms('.iresume')
+  resumes.forEach(val => {
+    val.style.zIndex = 1
+  })
+  dom.style.zIndex = 10
+}
+
+let grabToggle = dom => {
+  let grabbing = () => {
+    dom.style.cursor = 'grabbing'
+    dom.style.cursor = '-webkit-grabbing'
+    initZIndex(dom)
+  }
+  let grab = () => {
+    dom.style.cursor = 'grab'
+    dom.style.cursor = '-webkit-grab'
+  }
+  dom.onmousedown = grabbing
+  dom.onmouseup = grab
+}
+
 let ctrlScroll = (dom, bool, scale, speed) => {
   if (bool) scale *= 1 + speed
   else scale *= 1 - speed
@@ -45,28 +67,6 @@ let scaleToggle = (dom, scale, speed) => {
   if (dom.addEventListener) dom.addEventListener('DOMMouseScroll', scrollFunc, false)
   dom.onmousewheel = dom.onmousewheel = scrollFunc
   return scale
-}
-
-let initZIndex = (dom) => {
-  const resumes = getDoms('.iresume')
-  resumes.forEach(val => {
-    val.style.zIndex = 1
-  })
-  dom.style.zIndex = 10
-}
-
-let grabToggle = dom => {
-  let grabbing = () => {
-    dom.style.cursor = 'grabbing'
-    dom.style.cursor = '-webkit-grabbing'
-    initZIndex(dom)
-  }
-  let grab = () => {
-    dom.style.cursor = 'grab'
-    dom.style.cursor = '-webkit-grab'
-  }
-  dom.onmousedown = grabbing
-  dom.onmouseup = grab
 }
 
 export {
