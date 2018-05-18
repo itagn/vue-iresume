@@ -24,7 +24,7 @@ export default {
         avatars: '',
         contacts: [
           { name: '电话', value: '155xxxx2048' },
-          { name: '邮箱', value: 'itagn@foxmail.com' },
+          { name: '邮箱', value: '139xxxx847@qq.com' },
           { name: 'QQ', value: '139xxxx847' },
           { name: '微博', value: '一只彩笔东' }
         ],

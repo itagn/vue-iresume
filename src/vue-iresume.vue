@@ -12,7 +12,7 @@
           <div class="iresume-box-title">联系方式</div>
           <div class="iresume-box-content">
             <ul>
-              <li v-for="(contact, i) in user.contacts" :key="i">
+              <li v-for="(contact, i) in user.contacts" :key="i" class="iresume-contact">
                 {{ contact.name }}: {{ contact.value }}
               </li>
             </ul>

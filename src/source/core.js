@@ -1,6 +1,6 @@
 import avatars from './avatars.gif'
 import themes from './themes.json'
-import { getDom, getDoms, getMax, getMin, updateDom, throttle } from '../util/tool.js'
+import { getDom, getDoms, updateDom, throttle } from '../util/tool.js'
 export default {
   props: {
     pData: {
@@ -84,11 +84,11 @@ export default {
         screenHeight =  document.documentElement.clientHeight || document.body.clientHeight,
         screenWidth =  document.documentElement.clientWidth || document.body.clientWidth,
         currentHeight = pageHeight - baseDom.offsetTop
-      let mainHeight = '' 
+      let mainHeight = ''
       if (parseInt(screenWidth) < 700) {
         mainHeight = `${currentHeight}px`
       } else {
-        let minWidth = getMin(pageWidth, screenWidth)
+        let minWidth = Math.min(pageWidth, screenWidth)
         document.body.style.width = `${minWidth}px`
         if (currentHeight <= screenHeight) {
           mainHeight = `${screenHeight * 0.98}px`

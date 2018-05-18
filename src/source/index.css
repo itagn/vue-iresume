@@ -117,7 +117,7 @@ a:hover {
 @media screen and (max-width: 700px) {
   .iresume {
     width: 100%;
-    min-width: 420px;
+    min-width: 450px;
     height: auto;
     position: absolute;
     left: 0;

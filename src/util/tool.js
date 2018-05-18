@@ -2,16 +2,6 @@ let getDom = id => document.querySelector(id)
 
 let getDoms = id => document.querySelectorAll(id)
 
-let getMax = (...rest) => {
-  let arr = reset.map(val => parseInt(val))
-  return Math.max.apply(null, arr)
-}
-
-let getMin = (...rest) => {
-  let arr = rest.map(val => parseInt(val))
-  return Math.min.apply(null, arr)
-}
-
 let updateDom = (arr, prefix) => {
   arr.forEach(val => {
     let doms = getDoms(`${prefix} ${val.dom}`.trim())
@@ -35,8 +25,6 @@ let throttle = (method, context) => {
 export {
   getDom,
   getDoms,
-  getMax,
-  getMin,
   updateDom,
   throttle
 }
