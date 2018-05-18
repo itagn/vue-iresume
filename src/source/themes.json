@@ -1,0 +1,54 @@
+{
+    "blue": {
+        "left": {
+            "bgColor": "#00a1d6",
+            "fontColor": "#fff",
+            "box": {
+                "titleColor": "#fff"
+            }
+        },
+        "right": {
+            "bgColor": "#fff",
+            "fontColor": "#000",
+            "box": {
+                "infoColor": "#00a1d6",
+                "titleColor": "#00a1d6",
+                "hrColor": "#5ba4e5",
+                "project": {
+                    "titleColor": "#00a1d6",
+                    "urlColor": "#9966cc",
+                    "timeColor": "#999"
+                },
+                "mini": {
+                    "titleColor": "#5ba4e5"
+                }
+            }
+        }
+    },
+    "red": {
+        "left": {
+            "bgColor": "#f17c67",
+            "fontColor": "#fff",
+            "box": {
+                "titleColor": "#fff"
+            }
+        },
+        "right": {
+            "bgColor": "#fff",
+            "fontColor": "#000",
+            "box": {
+                "infoColor": "#f01b2d",
+                "titleColor": "#ff534d",
+                "hrColor": "#f01b2d",
+                "project": {
+                    "titleColor": "#ff534d",
+                    "urlColor": "#00a1d6",
+                    "timeColor": "#999"
+                },
+                "mini": {
+                    "titleColor": "#ff534d"
+                }
+            }
+        }
+    }
+}

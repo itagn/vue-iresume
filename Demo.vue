@@ -1,6 +1,7 @@
 <template>
   <div>
-    <iresume :pData="resumeData"></iresume>
+    <iresume :pData="resumeData" class="resume1" :pNode="resumeNode1"></iresume>
+    <iresume :pData="resumeData" class="resume2" :pNode="resumeNode2"></iresume>
   </div>
 </template>
 <script>
@@ -8,7 +9,9 @@ import Iresume from './src/vue-iresume'
 export default {
   data() {
     return {
-      resumeData: {}
+      resumeData: {},
+      resumeNode1: {},
+      resumeNode2: {}
     }
   },
   components: {
@@ -81,7 +84,22 @@ export default {
         ]
       }
     }
+    this.resumeNode1 = {
+      className: '.resume1',
+      theme: 'blue'
+    }
+    this.resumeNode2 = {
+      className: '.resume2',
+      theme: 'red'
+    }
   }
 }
 </script>
-<style></style>
+<style>
+.resume1, .resume2 {
+  position: relative;
+}
+.resume2 {
+  margin-top: 30px;
+}
+</style>

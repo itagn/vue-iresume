@@ -1,22 +1,20 @@
 .iresume {
   width: 60%;
-  min-width: 720px;
-  height: auto;
-  min-height: 100%;
+  height: 100%;
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
+  border: 1px solid #eee;
   font-family:  PingFang TC,Avenir Next,Helvetica,Arial,Hiragino Sans GB,Microsoft YaHei,sans-serif;
 }
 .iresume > .iresume-left {
   display: inline-block;
-  background-color: #29b6f6;
   width: 30%;
+  max-width: 240px;
 }
 .iresume > .iresume-right {
   display: inline-block;
-  background-color: #fff;
   width: 70%;
   position: absolute;
 }
@@ -30,7 +28,6 @@
   width: 100%;
   height: 1px;
   margin: 2% 0;
-  background-color: #00a1d6;
 }
 .iresume-box .iresume-box-title {
   font-size: 1.4em;
@@ -43,7 +40,7 @@
 .iresume-box .iresume-enterprise-time{
   position: absolute;
   right: 6%;
-  margin-top: 4px;
+  margin-top: 1px;
   font-size: 0.8em;
 }
 .iresume-box-content .iresume-box-article {
@@ -81,17 +78,12 @@ ul > li {
 ol > li {
   padding: 2% 0 0;
 }
-.iresume .iresume-white {
-  color: #fff;
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
-.iresume .iresume-blue {
-  color: #00a1d6;
-}
-.iresume .iresume-gray {
-  color: #999;
-}
-.iresume .iresume-sky {
-  color: #5ba4e5;
+a:hover {
+  text-decoration: underline;
 }
 .iresume .iresume-mini {
   font-size: 0.8em;
@@ -99,14 +91,12 @@ ol > li {
 }
 .iresume .iresume-project-url {
   cursor: pointer;
-  color: orange;
 }
-@media screen and (max-width: 1200px) {
+
+@media screen and (max-width: 1200px) and (min-width: 700px) {
   .iresume {
-    width: 80%;
-    min-width: 720px;
+    width: 90%;
     height: auto;
-    min-height: 100%;
     position: absolute;
     left: 0;
     right: 0;
@@ -116,22 +106,19 @@ ol > li {
   }
   .iresume > .iresume-left {
     display: inline-block;
-    background-color: #29b6f6;
     width: 30%;
   }
   .iresume > .iresume-right {
     display: inline-block;
-    background-color: #fff;
     width: 70%;
     position: absolute;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .iresume {
-    width: 60%;
-    min-width: 720px;
+    width: 100%;
+    min-width: 420px;
     height: auto;
-    min-height: 100%;
     position: absolute;
     left: 0;
     right: 0;
@@ -141,12 +128,10 @@ ol > li {
   }
   .iresume > .iresume-left {
     display: inline-block;
-    background-color: #29b6f6;
     width: 40%;
   }
   .iresume > .iresume-right {
     display: inline-block;
-    background-color: #fff;
     width: 60%;
     position: absolute;
   }

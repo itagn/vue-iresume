@@ -1,49 +1,103 @@
 import avatars from './avatars.gif'
+import themes from './themes.json'
+import { getDom, getDoms, getMax, getMin, updateDom, throttle } from '../util/tool.js'
 export default {
   props: {
     pData: {
+      type: Object
+    },
+    pNode: {
       type: Object
     }
   },
   data () {
     return {
       user: {},
-      toTrans: false
+      template: {}
     }
   },
   created () {
-    let { user } = this.pData
-    this.user = Object.assign({}, user)
-    this.user.avatars = this.user && this.user.avatars && this.user.avatars.length > 0 ? this.user.avatars : avatars
+    this.init()
   },
   mounted () {
+    this.domStyle()
     this.sameHeight()
-    //  函数节流
     window.onresize = () => {
-      this.throttle(this.sameHeight, window)
+      throttle(this.sameHeight, window)
     }
   },
   methods: {
-    throttle(method, context){
-      clearTimeout(method.tId)
-      method.tId = setTimeout(() => {
-          method.call(context)
-      }, 500)
+    init () {
+      let { user } = this.pData
+      this.user = Object.assign({}, user)
+      this.user.avatars = !!this.user && !!this.user.avatars && this.user.avatars.length > 0 ? this.user.avatars : avatars
+      let theme = 'blue'  // default
+      if (this.pNode && !!this.pNode.theme && Object.keys(themes).includes(theme)) theme = this.pNode.theme
+      this.template = themes[theme]
     },
-    getMax (...reset) {
-      let arr = reset.map(val => parseInt(val))
-      return Math.max.apply(null, arr)
-    },
-    getDom (name) {
-      return document.querySelectorAll(name)
+    domStyle () {
+      let { className = '' } = this.pNode
+      const { left, right } = this.template
+      const domArr = [
+        { dom: '.iresume .iresume-left', style: [
+          { color: left.fontColor },
+          { backgroundColor: left.bgColor }
+        ] },
+        { dom: '.iresume .iresume-left .iresume-box-title', style: [
+          { color: left.box.titleColor }
+        ] },
+        { dom: '.iresume .iresume-right', style: [
+          { color: right.fontColor },
+          { backgroundColor: right.bgColor }
+        ] },
+        { dom: '.iresume .iresume-right .iresume-infomation', style: [
+          { color: right.box.infoColor }
+        ] },
+        { dom: '.iresume .iresume-right .iresume-box-title', style: [
+          { color: right.box.titleColor }
+        ] },
+        { dom: '.iresume .iresume-right .iresume-hr', style: [
+          { backgroundColor: right.box.hrColor }
+        ] },
+        { dom: '.iresume .iresume-right .iresume-project', style: [
+          { color: right.box.project.titleColor }
+        ] },
+        { dom: '.iresume .iresume-right .iresume-project-url', style: [
+          { color: right.box.project.urlColor }
+        ] },
+        { dom: '.iresume .iresume-right .iresume-enterprise-time', style: [
+          { color: right.box.project.timeColor }
+        ] },
+        { dom: '.iresume .iresume-right .iresume-mini-title', style: [
+          { color: right.box.mini.titleColor }
+        ] }
+      ]
+      updateDom(domArr, className)
     },
     sameHeight () {
-      const leftDom = this.getDom('.iresume .iresume-left')[0],
-      rightDom = this.getDom('.iresume .iresume-right')[0]
-      let leftHeight = leftDom.offsetHeight, rightHeight = rightDom.offsetHeight
-      let maxHeight = this.getMax(leftHeight, rightHeight)
-      if (parseInt(leftHeight) !== parseInt(rightHeight) && maxHeight === parseInt(leftHeight)) rightDom.style.height = `${maxHeight}px`
-      if (parseInt(leftHeight) !== parseInt(rightHeight) && maxHeight === parseInt(rightHeight)) leftDom.style.height = `${maxHeight}px`
+      let { className = '' } = this.pNode
+      const leftDom = getDom(`${className} .iresume .iresume-left`),
+        rightDom = getDom(`${className} .iresume .iresume-right`),
+        baseDom = getDom(`${className}`)
+      let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight ,
+        pageWidth = document.body.scrollWidth || document.documentElement.scrollWidth,
+        screenHeight =  document.documentElement.clientHeight || document.body.clientHeight,
+        screenWidth =  document.documentElement.clientWidth || document.body.clientWidth,
+        currentHeight = pageHeight - baseDom.offsetTop
+      let mainHeight = '' 
+      if (parseInt(screenWidth) < 700) {
+        mainHeight = `${currentHeight}px`
+      } else {
+        let minWidth = getMin(pageWidth, screenWidth)
+        document.body.style.width = `${minWidth}px`
+        if (currentHeight <= screenHeight) {
+          mainHeight = `${screenHeight * 0.98}px`
+        } else {
+          mainHeight = `${currentHeight}px`
+        }
+      }
+      baseDom.style.height = `${currentHeight}px`
+      rightDom.style.height = leftDom.style.height = mainHeight
     },
     hrefTo (url) {
       window.open(url)
