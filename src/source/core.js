@@ -1,6 +1,6 @@
 import avatars from './avatars.gif'
 import themes from './themes.json'
-import { getDom, updateDom, throttle } from '../util/tool.js'
+import { getDom, getDoms, updateDom, throttle, scaleToggle, grabToggle } from '../util/tool.js'
 export default {
   props: {
     pData: {
@@ -13,7 +13,8 @@ export default {
   data () {
     return {
       user: {},
-      template: {}
+      template: {},
+      scale: 1
     }
   },
   created () {
@@ -22,9 +23,7 @@ export default {
   mounted () {
     this.domStyle()
     this.sameHeight()
-    window.onresize = () => {
-      throttle(this.sameHeight, window)
-    }
+    this.windowEvents()
   },
   methods: {
     init () {
@@ -34,6 +33,17 @@ export default {
       let theme = 'blue'  // default theme
       if (this.pNode && !!this.pNode.theme && Object.keys(themes).includes(theme)) theme = this.pNode.theme
       this.template = themes[theme]
+    },
+    windowEvents () {
+      let { className = '' } = this.pNode
+      const baseDom = getDom(`${className} .iresume`)
+      grabToggle(baseDom)
+      let { scale } = this
+      let speed = 0.1  //  scale speed
+      this.scale = scaleToggle(baseDom, scale, speed)
+      window.onresize = () => {
+        throttle(this.sameHeight, window)
+      }
     },
     domStyle () {
       let { className = '' } = this.pNode
@@ -85,11 +95,7 @@ export default {
         screenWidth =  document.documentElement.clientWidth || document.body.clientWidth,
         currentHeight = pageHeight - baseDom.offsetTop
       let mainHeight = `${currentHeight}px`
-      if (screenWidth > 700) {
-        let minWidth = Math.min(pageWidth, screenWidth)
-        document.body.style.width = `${minWidth}px`
-        if (currentHeight <= screenHeight) mainHeight = `${screenHeight * 0.98}px`
-      }
+      if (screenWidth > 700 && currentHeight <= screenHeight) mainHeight = `${screenHeight * 0.98}px`
       baseDom.style.height = `${currentHeight}px`
       rightDom.style.height = leftDom.style.height = mainHeight
     },

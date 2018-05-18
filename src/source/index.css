@@ -6,7 +6,12 @@
   right: 0;
   margin: auto;
   border: 1px solid #eee;
+  z-index: 1;
   font-family:  PingFang TC,Avenir Next,Helvetica,Arial,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+}
+.iresume:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 .iresume > .iresume-left {
   display: inline-block;

@@ -21,7 +21,7 @@ export default {
     this.resumeData = {
       user: {
         name: 'itagn',
-        avatars: '',
+        avatars: 'https://avatars3.githubusercontent.com/u/33992965?s=460&v=4',
         contacts: [
           { name: '电话', value: '155xxxx2048' },
           { name: '邮箱', value: '139xxxx847@qq.com' },
