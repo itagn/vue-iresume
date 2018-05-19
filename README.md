@@ -100,18 +100,19 @@ export default {
 ## 接口
 - `pData`   
 
+
     type: Object
     Default: {
         user: {
             name: "itagn",  //  谁的简历
-            avatars: "头像地址",  //  头像url，可以省略
+            avatars: "头像地址",  //  头像url，默认是一个可爱的二次元萌妹动图
             contacts: [
-                { name: "电话", "value": "xxxxxxxxxx" }  //  联系方式合集
+                { name: "电话", "value": "xxxxxxxxxx" }  //  联系方式模块
             ],
-            applications: ["xx工程师"],  //  应聘岗位合集
-            introductions: ["自我评价"],  //  自我评价，可以省略
-            infomations: [{ name: "姓名", "value": "itagn" }],  //  个人信息
-            enterprises: [  //  工作经验，可以省略
+            applications: ["xx工程师"],  //  应聘岗位模块
+            introductions: ["自我评价"],  //  自我评价模块，可以省略
+            infomations: [{ name: "姓名", "value": "itagn" }],  //  个人信息模块
+            enterprises: [  //  工作经验模块，可以省略
                 {
                     name: "xxxx有限公司",   //  公司名
                     startTime: "2018/x",  //  入职时间
@@ -119,7 +120,7 @@ export default {
                     jobs: ["码代码"]  //  工作内容
                 }
             ],
-            projects: [  //  团队项目合集，可以省略
+            projects: [  //  团队项目模块，可以省略
                 {
                     name: "团队项目xx系统",  //  项目名
                     startTime: "2018/x",  //  项目起始时间
@@ -129,7 +130,7 @@ export default {
                     url: "项目相关链接"  //  项目相关链接，可以省略
                 }
             ],
-            personalProjects: [  //  个人项目合集，可以省略
+            personalProjects: [  //  个人项目模块，可以省略
                 {
                     name: "个人项目xx系统",  //  项目名
                     startTime: "2018/x",  //  项目起始时间
@@ -139,7 +140,7 @@ export default {
                     url: "项目相关链接"  //  项目相关链接，可以省略
                 }
             ],
-            skills: [  //  技能合集，可以省略
+            skills: [  //  技能模块，可以省略
                 {
                     name: "javascript",  //  技术
                     introduction: "详细介绍"  //  详细介绍，可以省略
@@ -148,7 +149,9 @@ export default {
         }
     }
 
+
 - `pNode` 
+
 
     type: Object
     Default: {
@@ -159,6 +162,7 @@ export default {
         rightBackground: '',  //  简历右边背景，可以为图片地址或者颜色，默认使用主题风格
         rightColor: ''  //  简历右边字体颜色，默认使用主题风格
     }
+
 
 ## 贡献
 
