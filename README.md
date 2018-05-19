@@ -10,7 +10,7 @@
 :rocket: a cute resume template with vuejs  
 
 ## DEMO
-[DEMO](https://itagn.github.io/vue-iresume/dist/index)  
+[DEMO](https://itagn.github.io/vue-iresume/dist)  
 
 ## Contributing
 
