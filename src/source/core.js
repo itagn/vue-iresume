@@ -40,7 +40,7 @@ export default {
       this.deviceMemory = deviceMemory
     },
     windowEvents () {
-      let { className = '' } = this.pNode
+      let { className = '.iresumex' } = this.pNode
       const baseDom = getDom(`${className} .iresume`)
       grabToggle(baseDom)
       let { scale = 1 } = this
@@ -48,7 +48,7 @@ export default {
       this.scale = scaleToggle(baseDom, scale, speed)
     },
     domStyle () {
-      let { className = '', leftBackground = '', leftColor = '', rightBackground = '', rightColor = '' } = this.pNode
+      let { className = '.iresumex', leftBackground = '', leftColor = '', rightBackground = '', rightColor = '' } = this.pNode
       const { left, right } = this.template
       let leftBg = left.bgColor, rightBg = right.bgColor
       if (leftBackground !== '') leftBg = `url(${leftBackground}) repeat`

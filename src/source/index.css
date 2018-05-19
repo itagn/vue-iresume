@@ -1,10 +1,10 @@
 .iresumex {
-  margin: 30px;
+  margin: 5px 0 20px;
 }
 .iresume {
   position: relative;
   width: 60%;
-  min-width: 850px;
+  min-width: 768px;
   left: 0;
   right: 0;
   margin: auto;
@@ -103,20 +103,7 @@ a:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1200px) and (min-width: 700px) {
-  .iresume {
-    width: 90%;
-    min-width: 700px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    font-size: 90%;
-    display: flex;
-    display: -webkit-flex;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
-}
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
   .iresume {
     width: 100%;
     min-width: 450px;
