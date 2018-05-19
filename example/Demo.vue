@@ -5,6 +5,7 @@
     <iresume :pData="resumeData" class="resume3" :pNode="resumeNode3"></iresume>
     <iresume :pData="resumeData" class="resume4" :pNode="resumeNode4"></iresume>
     <iresume :pData="resumeData" class="resume5" :pNode="resumeNode5"></iresume>
+    <iresume :pData="resumeData" class="resume6" :pNode="resumeNode6"></iresume>
   </div>
 </template>
 <script>
@@ -50,6 +51,10 @@ export default {
     this.resumeNode5 = {
       className: '.resume5',
       theme: 'orange'
+    }
+    this.resumeNode6 = {
+      className: '.resume6',
+      theme: 'yellow'
     }
   }
 }

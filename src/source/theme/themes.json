@@ -102,5 +102,31 @@
                 }
             }
         }
+    },
+    "yellow": {
+        "left": {
+            "bgColor": "#ba874c",
+            "fontColor": "#fff",
+            "box": {
+                "titleColor": "#fff"
+            }
+        },
+        "right": {
+            "bgColor": "#fff",
+            "fontColor": "#000",
+            "box": {
+                "infoColor": "#ba874c",
+                "titleColor": "#ba874c",
+                "hrColor": "#de8100",
+                "project": {
+                    "titleColor": "#e9ae6a",
+                    "urlColor": "#00a1d6",
+                    "timeColor": "#999"
+                },
+                "mini": {
+                    "titleColor": "#e9ae6a"
+                }
+            }
+        }
     }
 }
