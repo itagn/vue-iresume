@@ -1,0 +1,23 @@
+{
+  "name": "vue-iresume",
+  "version": "1.0.0",
+  "description": "a cute resume template with vuejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itagn/vue-iresume.git"
+  },
+  "keywords": [
+    "vue",
+    "resume"
+  ],
+  "author": "itagn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itagn/vue-iresume/issues"
+  },
+  "homepage": "https://github.com/itagn/vue-iresume#readme"
+}

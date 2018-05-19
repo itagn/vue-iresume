@@ -1,10 +1,16 @@
 # vue-iresume
 
+<p>
+  <a href="https://www.npmjs.com/package/vue-iresume.svg"><img src="https://img.shields.io/npm/dm/vue-iresume.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/vue-iresume.svg"><img src="https://img.shields.io/npm/v/vue-iresume.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/vue-iresume.svg"><img src="https://img.shields.io/npm/l/vue-iresume.svg" alt="License"></a>
+</p>
+
 ## Introduction
-:rocket: a cute resume with vuejs  
+:rocket: a cute resume template with vuejs  
 
 ## DEMO
-[DEMO](https://itagn.github.io/resume)  
+[DEMO](https://itagn.github.io/vue-iresume/dist/index)  
 
 ## Contributing
 
