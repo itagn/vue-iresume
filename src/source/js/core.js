@@ -1,6 +1,6 @@
-import avatars from './avatars.gif'
-import themes from './themes.json'
-import { getDom, getDoms, updateDom, scaleToggle, grabToggle } from '../util/tool.js'
+import avatars from '../img/avatars.gif'
+import themes from '../theme/themes.json'
+import { getDom, getDoms, updateDom, scaleToggle, grabToggle } from './tool.js'
 export default {
   props: {
     pData: {
