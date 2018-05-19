@@ -20,7 +20,7 @@
     7. 可以git clone或者通过npm安装后修改源码的themes.json配置你想要的主题风格
 
 目前只封装了部分主题，你可以git clone到本地，然后修改theme文件夹的themes.json，制作私人主题  
-也可以使用组件提供的主题，主题名：blue、pink、orange、purple
+也可以使用组件提供的主题，主题名：blue、pink、orange、purple、yellow
 ## DEMO
 [DEMO](https://itagn.github.io/vue-iresume/dist)  
 
@@ -173,7 +173,7 @@ export default {
         type: Object
         Default: {
             className: '',  //  如果你在组件上添加了id或者class属性，对应填写className，一个页面展示多个简历需要添加标识
-            theme: 'blue',  //  简历主题风格，默认为blue，其他值pink，orange，purple
+            theme: 'blue',  //  简历主题风格，默认为blue，其他值pink，orange，purple，yellow
             leftBackground: '',  //  简历左边背景，可以为图片地址或者颜色，默认使用主题风格
             leftColor: '',  //  简历左边字体颜色，默认使用主题风格
             rightBackground: '',  //  简历右边背景，可以为图片地址或者颜色，默认使用主题风格
