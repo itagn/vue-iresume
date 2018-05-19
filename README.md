@@ -89,7 +89,7 @@ export default {
             resumeNode: {
                 className: '.resume',
                 theme: 'blue'
-            },
+            }
         }
     }
 }
@@ -99,7 +99,7 @@ export default {
 
 ## 接口
 - `pData`   
-- 
+
     type: Object
     Default: {
         user: {
@@ -149,15 +149,15 @@ export default {
     }
 
 - `pNode` 
-- 
+
     type: Object
     Default: {
-        className: '',  //  如果你在组件上添加了class，则对应输入className，一般页面展示多个简历需要添加标识
-        theme: 'blue',  //  简历主题风格，默认为blue，还有pink，orange，purple
+        className: '',  //  如果你在组件上添加了id或者class属性，对应填写className，一个页面展示多个简历需要添加标识
+        theme: 'blue',  //  简历主题风格，默认为blue，其他值pink，orange，purple
         leftBackground: '',  //  简历左边背景，可以为图片地址或者颜色，默认使用主题风格
         leftColor: '',  //  简历左边字体颜色，默认使用主题风格
         rightBackground: '',  //  简历右边背景，可以为图片地址或者颜色，默认使用主题风格
-        rightColor: ,  //  简历右边字体颜色，默认使用主题风格
+        rightColor: ''  //  简历右边字体颜色，默认使用主题风格
     }
 
 ## 贡献
