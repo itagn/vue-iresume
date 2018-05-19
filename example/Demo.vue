@@ -1,11 +1,11 @@
 <template>
   <div>
-    <iresume :pData="resumeData" class="resume1" :pNode="resumeNode1"></iresume>
-    <iresume :pData="resumeData" class="resume2" :pNode="resumeNode2"></iresume>
-    <iresume :pData="resumeData" class="resume3" :pNode="resumeNode3"></iresume>
-    <iresume :pData="resumeData" class="resume4" :pNode="resumeNode4"></iresume>
-    <iresume :pData="resumeData" class="resume5" :pNode="resumeNode5"></iresume>
-    <iresume :pData="resumeData" class="resume6" :pNode="resumeNode6"></iresume>
+    <iresume :pData="resumeData" class="resume1" :pNode="resumeNode1" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData" class="resume2" :pNode="resumeNode2" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData" class="resume3" :pNode="resumeNode3" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData" class="resume4" :pNode="resumeNode4" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData" class="resume5" :pNode="resumeNode5" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData" class="resume6" :pNode="resumeNode6" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
   </div>
 </template>
 <script>
@@ -19,7 +19,8 @@ export default {
     return {
       resumeData: {},
       resumeNode1: {},
-      resumeNode2: {}
+      resumeNode2: {},
+      zIndex: 1
     }
   },
   components: {
@@ -55,6 +56,12 @@ export default {
     this.resumeNode6 = {
       className: '.resume6',
       theme: 'yellow'
+    }
+  },
+  methods: {
+    //  同步多个组件的z-index
+    saveZIndex (data) {
+      this.zIndex = data
     }
   }
 }

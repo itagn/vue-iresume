@@ -10,11 +10,9 @@
 :rocket: 用vue组件制作的可爱简历模板的  
 
 目前只封装了部分主题，你可以git clone到本地，然后修改theme文件夹的themes.json，制作私人主题  
-也可以使用组件提供的主题，主题名：blue、pink、orange、purple、yellow
+也可以使用组件提供的主题，主题名：blue、pink、orange、purple
 ## DEMO
 [DEMO](https://itagn.github.io/vue-iresume/dist)  
-
-可以在这里查看效果，对应example/Demo.vue
 
 ## 安装
 ```text
@@ -27,12 +25,12 @@ $ yarn add vue-iresume --save
 ```
 
 ## 使用  
-example文件夹可以帮助你熟悉vue-iresume组件  
+example文件夹可以指导你的使用  
 在example文件夹已经添加example/Demo.vue   可以把简历的详细内容提取成json文件，如example/resume/resume.json  
 简历的背景可以换成图片，如背景图example/img/bg1.jpg
 ```javascript
 <template>
-    <iresume :pData="resumeData" class="resume" :pNode="resumeNode"></iresume>
+    <iresume :pData="resumeData" class="resume" :pNode="resumeNode" :index="zIndex" @syncZIndex="saveZIndex"></iresume>
 </template>
 <script>
 import { Iresume } from 'vue-iresume'
@@ -43,6 +41,7 @@ export default {
     data() {
         return {
             resumeData: {
+                zIndex: 1,
                 user: {
                     name: "itagn",
                     avatars: "头像地址",
@@ -92,6 +91,11 @@ export default {
                 className: '.resume',
                 theme: 'blue'
             }
+        }
+    },
+    methods: {
+        saveZIndex (data) {
+            this.zIndex = data
         }
     }
 }
@@ -159,12 +163,28 @@ export default {
         type: Object
         Default: {
             className: '',  //  如果你在组件上添加了id或者class属性，对应填写className，一个页面展示多个简历需要添加标识
-            theme: 'blue',  //  简历主题风格，默认为blue，其他值pink，orange，purple，yellow
+            theme: 'blue',  //  简历主题风格，默认为blue，其他值pink，orange，purple
             leftBackground: '',  //  简历左边背景，可以为图片地址或者颜色，默认使用主题风格
             leftColor: '',  //  简历左边字体颜色，默认使用主题风格
             rightBackground: '',  //  简历右边背景，可以为图片地址或者颜色，默认使用主题风格
             rightColor: ''  //  简历右边字体颜色，默认使用主题风格
         }
+
+- `index` 
+
+
+        type: Number
+        describe：
+            同步父组件的index数据，确认同一个页面多个简历能有正确的层级关系
+            若一个页面只有一个简历时，则可以忽略该接口
+
+
+## 事件
+- `syncZIndex`
+
+
+        当同一个页面多个简历时，需要确认层级关系，则子组件需要同步父组件的zIndex
+        若一个页面只有一个简历时，则可以忽略该方法
 
 
 ## 贡献

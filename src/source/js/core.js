@@ -1,6 +1,6 @@
 import avatars from '../img/avatars.gif'
 import themes from '../theme/themes.json'
-import { getDom, getDoms, updateDom, scaleToggle, grabToggle } from './tool.js'
+import { getDom, getDoms, updateDom, drag } from './tool.js'
 export default {
   props: {
     pData: {
@@ -8,6 +8,9 @@ export default {
     },
     pNode: {
       type: Object
+    },
+    index: {
+      type: Number
     }
   },
   data () {
@@ -15,12 +18,11 @@ export default {
       user: {},
       template: {},
       scale: 1,
-      deviceMemory: 0
+      zIndex: 1
     }
   },
   created () {
     this.init()
-    this.checkNavigator()
   },
   mounted () {
     this.domStyle()
@@ -35,17 +37,55 @@ export default {
       if (this.pNode && !!this.pNode.theme && Object.keys(themes).includes(theme)) theme = this.pNode.theme
       this.template = themes[theme]
     },
-    checkNavigator () {
-      let { deviceMemory = -1 } = window.navigator
-      this.deviceMemory = deviceMemory
-    },
     windowEvents () {
       let { className = '.iresumex' } = this.pNode
       const baseDom = getDom(`${className} .iresume`)
-      grabToggle(baseDom)
-      let { scale = 1 } = this
+      this.initPos(baseDom)
+      drag(baseDom)
+      this.grabToggle(baseDom)
       let speed = 0.1
-      this.scale = scaleToggle(baseDom, scale, speed)
+      this.scaleToggle(baseDom, speed)
+    },
+    initZIndex (dom) {
+      this.zIndex = this.index + 1
+      dom.style.zIndex = this.zIndex
+      this.$emit('syncZIndex', this.zIndex)
+    },
+    grabToggle (dom) {
+      dom.addEventListener('mousedown', () => {
+        this.initZIndex(dom)
+        dom.style.cursor = 'grabbing'
+        dom.style.cursor = '-webkit-grabbing'
+      })
+      dom.addEventListener('mouseup', () => {
+        dom.style.cursor = 'grab'
+        dom.style.cursor = '-webkit-grab'
+      })
+    },
+    ctrlScroll (dom, bool, speed) {
+      if (bool) this.scale *= (1 + speed)
+      else this.scale *= (1 - speed)
+      this.initZIndex(dom)
+      dom.style.transform = `scale(${this.scale})`
+      dom.style.webkitTransform = `scale(${this.scale})`
+    },
+    scaleToggle (dom, speed) {
+      let scrollFunc = e => {
+        e = e || window.event
+        if (e.wheelDelta && event.ctrlKey) {
+          event.returnValue = false
+          this.ctrlScroll(dom, e.wheelDelta > 0, speed)
+        } else if (e.detail && event.ctrlKey) {
+          event.returnValue = false
+          this.ctrlScroll(dom, e.detail > 0, speed)
+        }
+      }
+      dom.addEventListener('DOMMouseScroll', scrollFunc, false)
+      dom.onmousewheel = dom.onmousewheel = scrollFunc
+    },
+    initPos (dom) {
+      dom.style.top = dom.scrollTop
+      dom.style.left = dom.scrollLeft
     },
     domStyle () {
       let { className = '.iresumex', leftBackground = '', leftColor = '', rightBackground = '', rightColor = '' } = this.pNode

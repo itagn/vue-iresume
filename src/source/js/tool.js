@@ -15,57 +15,53 @@ let updateDom = (arr, prefix) => {
   })
 }
 
-let initZIndex = dom => {
-  const resumes = getDoms('.iresume')
-  resumes.forEach(val => {
-    val.style.zIndex = 1
+let getMousePos = e => {
+  let { clientX, clientY } = e
+  return {
+    x: clientX,
+    y: clientY
+  }
+}
+
+let getDomPos = dom => {
+  let { left = 0, top = 0 } = dom.style
+  return {
+    x: parseInt(left),
+    y: parseInt(top)
+  }
+}
+
+let drag = dom => {
+  let isDrage = false
+  let startPos = {}, endPos = {}
+  dom.addEventListener('mousedown', e => {
+    isDrage = true
+    startPos = getMousePos(e)
   })
-  dom.style.zIndex = 10
-}
-
-let grabToggle = dom => {
-  let grabbing = () => {
-    initZIndex(dom)
-    dom.style.cursor = 'grabbing'
-    dom.style.cursor = '-webkit-grabbing'
-  }
-  let grab = () => {
-    dom.style.cursor = 'grab'
-    dom.style.cursor = '-webkit-grab'
-  }
-  dom.onmousedown = grabbing
-  dom.onmouseup = grab
-}
-
-let ctrlScroll = (dom, bool, scale, speed) => {
-  if (bool) scale *= 1 + speed
-  else scale *= 1 - speed
-  initZIndex(dom)
-  dom.style.transform = `scale(${scale})`
-  dom.style.webkitTransform = `scale(${scale})`
-  return scale
-}
-
-let scaleToggle = (dom, scale, speed) => {
-  let scrollFunc = e => {
-    e = e || window.event
-    if (e.wheelDelta && event.ctrlKey) {
-      event.returnValue = false
-      scale = ctrlScroll(dom, e.wheelDelta > 0, scale, speed)
-    } else if (e.detail && event.ctrlKey) {
-      event.returnValue = false
-      scale = ctrlScroll(dom, e.detail > 0, scale, speed)
+  document.addEventListener('mouseup', e => {
+    isDrage = false
+  })
+  document.addEventListener('mousemove', e => {
+    if (!isDrage) return
+    endPos = getMousePos(e)
+    let offsetPos = {
+      x: endPos.x - startPos.x,
+      y: endPos.y - startPos.y
     }
-  }
-  if (dom.addEventListener) dom.addEventListener('DOMMouseScroll', scrollFunc, false)
-  dom.onmousewheel = dom.onmousewheel = scrollFunc
-  return scale
+    let domPos = getDomPos(dom)
+    let newPos = {
+      left: domPos.x + offsetPos.x,
+      top: domPos.y + offsetPos.y
+    }
+    dom.style.left = `${newPos.left}px`
+    dom.style.top = `${newPos.top}px`
+    startPos = endPos
+  })
 }
 
 export {
   getDom,
   getDoms,
   updateDom,
-  scaleToggle,
-  grabToggle
+  drag
 }
