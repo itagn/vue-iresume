@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="iresumex">
     <div class="iresume">
       <div class="iresume-left">
         <div class="iresume-avatars">

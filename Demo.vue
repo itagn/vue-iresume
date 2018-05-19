@@ -122,7 +122,4 @@ export default {
 }
 </script>
 <style>
-.resume2, .resume3, .resume4, .resume5 {
-  margin-top: 30px;
-}
 </style>

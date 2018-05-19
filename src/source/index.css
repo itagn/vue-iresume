@@ -1,29 +1,32 @@
+.iresumex {
+  margin: 30px;
+}
 .iresume {
+  position: relative;
   width: 60%;
-  height: 100%;
-  position: absolute;
+  min-width: 850px;
   left: 0;
   right: 0;
   margin: auto;
+  display: flex;
+  display: -webkit-flex;
   z-index: 1;
   font-family:  PingFang TC,Avenir Next,Helvetica,Arial,Hiragino Sans GB,Microsoft YaHei,sans-serif;
 }
 .iresume:hover {
-  cursor: -webkit-grab;
   cursor: grab;
+  cursor: -webkit-grab;
 }
 .iresume > .iresume-left {
-  display: inline-block;
-  width: 30%;
-  max-width: 240px;
+  float: left;
+  flex: 3;
   border-top: 1px solid #eee;
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 .iresume > .iresume-right {
-  display: inline-block;
-  width: 70%;
-  position: absolute;
+  float: left;
+  flex: 7;
   border-top: 1px solid #eee;
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -103,53 +106,38 @@ a:hover {
 @media screen and (max-width: 1200px) and (min-width: 700px) {
   .iresume {
     width: 90%;
-    height: auto;
-    position: absolute;
+    min-width: 700px;
     left: 0;
     right: 0;
     margin: auto;
     font-size: 90%;
+    display: flex;
+    display: -webkit-flex;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
-  .iresume > .iresume-left {
-    display: inline-block;
-    width: 30%;
-    border-top: 1px solid #eee;
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-  }
-  .iresume > .iresume-right {
-    display: inline-block;
-    width: 70%;
-    position: absolute;
-    border-top: 1px solid #eee;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
   }
 }
 @media screen and (max-width: 700px) {
   .iresume {
     width: 100%;
     min-width: 450px;
-    height: auto;
-    position: absolute;
     left: 0;
     right: 0;
-    margin: auto;
     font-size: 62.5%;
+    margin: auto;
+    display: flex;
+    display: -webkit-flex;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
   }
   .iresume > .iresume-left {
-    display: inline-block;
-    width: 40%;
+    float: left;
+    flex: 4;
     border-top: 1px solid #eee;
     border-left: 1px solid #eee;
     border-bottom: 1px solid #eee;
   }
   .iresume > .iresume-right {
-    display: inline-block;
-    width: 60%;
-    position: absolute;
+    float: left;
+    flex: 6;
     border-top: 1px solid #eee;
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;

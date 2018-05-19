@@ -1,6 +1,6 @@
 import avatars from './avatars.gif'
 import themes from './themes.json'
-import { getDom, getDoms, updateDom, throttle, scaleToggle, grabToggle } from '../util/tool.js'
+import { getDom, getDoms, updateDom, scaleToggle, grabToggle } from '../util/tool.js'
 export default {
   props: {
     pData: {
@@ -24,7 +24,6 @@ export default {
   },
   mounted () {
     this.domStyle()
-    this.sameHeight()
     this.windowEvents()
   },
   methods: {
@@ -44,12 +43,9 @@ export default {
       let { className = '' } = this.pNode
       const baseDom = getDom(`${className} .iresume`)
       grabToggle(baseDom)
-      let { scale } = this
+      let { scale = 1 } = this
       let speed = 0.1
       this.scale = scaleToggle(baseDom, scale, speed)
-      window.onresize = () => {
-        throttle(this.sameHeight, window)
-      }
     },
     domStyle () {
       let { className = '', leftBackground = '', leftColor = '', rightBackground = '', rightColor = '' } = this.pNode
@@ -94,20 +90,6 @@ export default {
         ] }
       ]
       updateDom(domArr, className)
-    },
-    sameHeight () {
-      let { className = '' } = this.pNode
-      const leftDom = getDom(`${className} .iresume .iresume-left`),
-        rightDom = getDom(`${className} .iresume .iresume-right`),
-        baseDom = getDom(`${className}`)
-      let pageHeight = this.deviceMemory === -1 ? document.body.scrollHeight : document.documentElement.scrollHeight ,
-        pageWidth = this.deviceMemory === -1 ? document.body.scrollWidth : document.documentElement.scrollWidth,
-        screenHeight = this.deviceMemory === -1 ? document.body.clientHeight : document.documentElement.clientHeight,
-        screenWidth =  this.deviceMemory === -1 ? document.body.clientWidth : document.documentElement.clientWidth,
-        currentHeight = pageHeight - baseDom.offsetTop
-      let mainHeight = `${currentHeight}px`
-      baseDom.style.height = `${currentHeight}px`
-      rightDom.style.height = leftDom.style.height = mainHeight
     },
     hrefTo (url) {
       window.open(url)

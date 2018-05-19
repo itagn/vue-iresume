@@ -15,14 +15,7 @@ let updateDom = (arr, prefix) => {
   })
 }
 
-let throttle = (method, context) => {
-  clearTimeout(method.tId)
-  method.tId = setTimeout(() => {
-      method.call(context)
-  }, 500)
-}
-
-let initZIndex = (dom) => {
+let initZIndex = dom => {
   const resumes = getDoms('.iresume')
   resumes.forEach(val => {
     val.style.zIndex = 1
@@ -32,9 +25,9 @@ let initZIndex = (dom) => {
 
 let grabToggle = dom => {
   let grabbing = () => {
+    initZIndex(dom)
     dom.style.cursor = 'grabbing'
     dom.style.cursor = '-webkit-grabbing'
-    initZIndex(dom)
   }
   let grab = () => {
     dom.style.cursor = 'grab'
@@ -73,7 +66,6 @@ export {
   getDom,
   getDoms,
   updateDom,
-  throttle,
   scaleToggle,
   grabToggle
 }
