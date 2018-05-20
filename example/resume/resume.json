@@ -3,67 +3,254 @@
     "user": {
       "name": "itagn",
       "avatars": "",
-      "contacts": [
-        { "name": "电话", "value": "155xxxx2048" },
-        { "name": "邮箱", "value": "139xxxx847@qq.com" },
-        { "name": "QQ", "value": "139xxxx847" },
-        { "name": "微博", "value": "一只彩笔东" }
-      ],
-      "applications": ["前端开发工程师"],
-      "introductions": [
-        "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
-        "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
-      ],
-      "infomations": [
-        { "name": "姓名", "value": "itagn" },
-        { "name": "学历", "value": "本科" },
-        { "name": "毕业院校", "value": "电子科技大学" },
-        { "name": "毕业年月", "value": "2017/7" },
-        { "name": "专业", "value": "计算机科学与技术" }
-      ],
-      "enterprises": [
+      "leftModules": [
         {
-          "name": "xxxx有限公司",
-          "startTime": "2017/7",
-          "endTime": "至今",
-          "jobs": [
-            "coding",
-            "coding",
-            "coding",
-            "coding"
+          "moduleName": "联系方式",
+          "moduleType": 0,
+          "data": [
+            { "name": "电话", "value": "155xxxx2048" },
+            { "name": "邮箱", "value": "itagn@foxmail.com" },
+            { "name": "QQ", "value": "139xxxx847" },
+            { "name": "微博", "value": "一只彩笔东" }
+          ]
+        },
+        {
+          "moduleName": "应聘岗位",
+          "moduleType": 1,
+          "data": [
+            "前端开发工程师"
+          ]
+        },
+        {
+          "moduleName": "个人评价",
+          "moduleType": 2,
+          "data": [
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
           ]
         }
       ],
-      "projects": [
+      "rightModules": [
         {
-          "name": "项目管理系统",
-          "startTime": "2017/8",
-          "endTime": "2017/9",
-          "introduction": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
-          "working": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
-        }
-      ],
-      "personalProjects": [
-        {
-          "name": "基于DES加密的即时通信聊天系统",
-          "startTime": "2017/1",
-          "endTime": "2017/5",
-          "introduction": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
-          "working": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
-          "url": "https://github.com/itagn/InstantMessageSystem"
-        }
-      ],
-      "skills": [
-        {
-          "name": "javascript",
-          "introduction": ""
+          "moduleName": "基础信息",
+          "moduleType": 0,
+          "data": [
+            { "name": "姓名", "value": "itagn" },
+            { "name": "学历", "value": "本科" },
+            { "name": "毕业院校", "value": "电子科技大学" },
+            { "name": "毕业年月", "value": "2017/7" },
+            { "name": "专业", "value": "计算机科学与技术" }
+          ]
         },
         {
-          "name": "nodejs",
-          "introduction": ""
-        },{
-          "name": "vuejs",
-          "introduction": ""
+          "moduleName": "工作经验",
+          "moduleType": 1,
+          "data": [
+            {
+              "name": "xxxx有限公司",
+              "startTime": "2017/7",
+              "endTime": "至今",
+              "miniModule": [
+                {
+                  "miniName": "工作内容",
+                  "data": [
+                    "coding",
+                    "coding",
+                    "coding",
+                    "coding"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moduleName": "团队项目",
+          "moduleType": 2,
+          "data": [
+            {
+              "name": "项目管理系统",
+              "startTime": "2017/8",
+              "endTime": "2017/9",
+              "miniModule": [
+                {
+                  "miniName": "项目介绍",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "项目职责",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moduleName": "个人项目",
+          "moduleType": 2,
+          "data": [
+            {
+              "name": "基于DES加密的即时通信聊天系统",
+              "url": "https://github.com/itagn/InstantMessageSystem",
+              "startTime": "2017/1",
+              "endTime": "2017/5",
+              "miniModule": [
+                {
+                  "miniName": "项目介绍",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "项目职责",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moduleName": "技能树",
+          "moduleType": 3,
+          "data": [
+            "javascript",
+            "nodejs",
+            "vuejs"
+          ]
+        },
+        {
+          "moduleName": "自我评价",
+          "moduleType": 4,
+          "data": [
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+          ]
+        }
+      ]
+    }
+  },
+  "custom" : {
+    "user": {
+      "name": "自定义",
+      "avatars": "",
+      "leftModules": [
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 0,
+          "data": [
+            { "name": "自定义", "value": "自定义" },
+            { "name": "自定义", "value": "自定义" },
+            { "name": "自定义", "value": "自定义" },
+            { "name": "自定义", "value": "自定义" }
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 1,
+          "data": [
+            "前端开发工程师"
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 2,
+          "data": [
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+          ]
+        }
+      ],
+      "rightModules": [
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 0,
+          "data": [
+            { "name": "自定义", "value": "自定义" },
+            { "name": "自定义", "value": "自定义" },
+            { "name": "自定义", "value": "自定义" },
+            { "name": "自定义", "value": "自定义/7" },
+            { "name": "自定义", "value": "自定义" }
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 1,
+          "data": [
+            {
+              "name": "自定义",
+              "startTime": "2018/x",
+              "endTime": "2018/x",
+              "miniModule": [
+                {
+                  "miniName": "自定义",
+                  "data": [
+                    "自定义",
+                    "自定义",
+                    "自定义",
+                    "自定义"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 2,
+          "data": [
+            {
+              "name": "自定义",
+              "startTime": "2018/x",
+              "endTime": "2018/x",
+              "miniModule": [
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 2,
+          "data": [
+            {
+              "name": "自定义",
+              "url": "https://github.com/itagn",
+              "startTime": "2018/x",
+              "endTime": "2018/x",
+              "miniModule": [
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 3,
+          "data": [
+            "自定义",
+            "自定义",
+            "自定义"
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 4,
+          "data": [
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
+            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+          ]
         }
       ]
     }

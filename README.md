@@ -16,8 +16,9 @@
     3. 简历支持拖拽功能和层级关系
     4. 一个页面支持多个简历
     5. 可以个性化设计简历
-    6. 不需要的模块不带入模块数据既可
+    6. 所有模块实现自定义内容，通过左右两边不同模块的moduleType来区分模块的样式
     7. 可以git clone或者通过npm安装后修改源码的themes.json配置你想要的主题风格
+    8. 所有模块并非都需要加载，按照你的需求来填写对应模块的数据
 
 目前只封装了部分主题，你可以git clone到本地，然后修改theme文件夹的themes.json，制作私人主题  
 也可以使用组件提供的主题，主题名：blue、pink、orange、purple、yellow
@@ -50,49 +51,118 @@ export default {
     },
     data() {
         return {
+            zIndex: 1,
             resumeData: {
-                zIndex: 1,
                 user: {
                     name: "itagn",
                     avatars: "头像地址",
-                    contacts: [
-                        { name: "电话", "value": "xxxxxxxxxx" }
-                    ],
-                    applications: ["xx工程师"],
-                    introductions: ["自我评价"],
-                    infomations: [{ name: "姓名", "value": "itagn" }],
-                    enterprises: [
+                    leftModules: [
                         {
-                            name: "xxxx有限公司",
-                            startTime: "2018/x",
-                            endTime: "2018/x",
-                            jobs: ["码代码"]
+                            moduleName: "联系方式",
+                            moduleType: 0,
+                            data: [
+                                { name: "电话", "value": "xxxxxxxxxx" }
+                            ]
+                        },
+                        {
+                            moduleName: "应聘岗位",
+                            moduleType: 1,
+                            data: [
+                                "xx工程师"
+                            ]
+                        },
+                        {
+                            moduleName: "个人评价",
+                            moduleType: 2,
+                            data: [
+                                "自我评价"
+                            ]
                         }
                     ],
-                    projects: [
+                    rightModules: [
                         {
-                            name: "团队项目xx系统",
-                            startTime: "2018/x",
-                            endTime: "2018/x",
-                            introduction: "团队项目介绍",
-                            working: "工作量",
-                            url: "项目相关链接"
-                        }
-                    ],
-                    personalProjects: [
+                            moduleName: "基础信息",
+                            moduleType: 0,
+                            data: [
+                                { name: "姓名", value: "itagn" }
+                            ]
+                        },
                         {
-                            name: "个人项目xx系统",
-                            startTime: "2018/x",
-                            endTime: "2018/x",
-                            introduction: "私人项目介绍",
-                            working: "工作量",
-                            url: "项目相关链接"
-                        }
-                    ],
-                    skills: [
+                            moduleName: "工作经验",
+                            moduleType: 1,
+                            data: [
+                                {
+                                    name: "xxxx有限公司",
+                                    startTime: "2018/x",
+                                    endTime: "2018/x",
+                                    miniModule: [
+                                        {
+                                            miniName: "工作内容",
+                                            data: [
+                                                "码代码"
+                                            ]
+                                        }
+                                ]
+                                }
+                            ]
+                        },
                         {
-                        name: "javascript",
-                        introduction: "详细介绍"
+                            moduleName: "团队项目",
+                            moduleType: 2,
+                            data: [
+                                {
+                                    name: "团队项目xx系统",
+                                    url: "项目相关链接",
+                                    startTime: "2018/x",
+                                    endTime: "2018/x",
+                                    miniModule: [
+                                        {
+                                            miniName: "项目介绍",
+                                            data: "团队项目介绍"
+                                        },
+                                        {
+                                            miniName: "项目职责",
+                                            data: "工作量"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            moduleName: "个人项目",
+                            moduleType: 2,
+                            data: [
+                                {
+                                    name: "个人项目xx系统",
+                                    url: "项目相关链接",
+                                    startTime: "2018/x",
+                                    endTime: "2018/x",
+                                    miniModule: [
+                                        {
+                                            miniName: "项目介绍",
+                                            data: "团队项目介绍"
+                                        },
+                                        {
+                                            miniName: "项目职责",
+                                            data: "工作量"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            moduleName: "技能树",
+                            moduleType: 3,
+                            data: [
+                                "javascript"
+                            ]
+                        },
+                        {
+                            moduleName: "自我评价",
+                            moduleType: 4,
+                            data: [
+                                "自我评价文章段落"
+                            ]
                         }
                     ]
                 }
@@ -123,44 +193,113 @@ export default {
             user: {
                 name: "itagn",  //  谁的简历
                 avatars: "头像地址",  //  头像url，默认是一个可爱的二次元萌妹动图
-                contacts: [
-                    { name: "电话", "value": "xxxxxxxxxx" }  //  联系方式模块
-                ],
-                applications: ["xx工程师"],  //  应聘岗位模块
-                introductions: ["自我评价"],  //  自我评价模块，可以省略
-                infomations: [{ name: "姓名", "value": "itagn" }],  //  个人信息模块
-                enterprises: [  //  工作经验模块，可以省略
+                leftModules: [  //  左边的模块，根据moduleType来区分不同的模块样式
                     {
-                        name: "xxxx有限公司",   //  公司名
-                        startTime: "2018/x",  //  入职时间
-                        endTime: "2018/x",  //  离职时间
-                        jobs: ["码代码"]  //  工作内容
+                        moduleName: "联系方式",
+                        moduleType: 0,
+                        data: [
+                            { name: "电话", "value": "xxxxxxxxxx" }
+                        ]
+                    },
+                    {
+                        moduleName: "应聘岗位",
+                        moduleType: 1,
+                        data: [
+                            "xx工程师"
+                        ]
+                    },
+                    {
+                        moduleName: "个人评价",
+                        moduleType: 2,
+                        data: [
+                            "自我评价"
+                        ]
                     }
                 ],
-                projects: [  //  团队项目模块，可以省略
+                rightModules: [  //  右边的模块，根据moduleType来区分不同的模块样式
                     {
-                        name: "团队项目xx系统",  //  项目名
-                        startTime: "2018/x",  //  项目起始时间
-                        endTime: "2018/x",  //  项目结束时间
-                        introduction: "团队项目介绍",  //  项目简介
-                        working: "工作量",  //  项目中的工作量
-                        url: "项目相关链接"  //  项目相关链接，可以省略
-                    }
-                ],
-                personalProjects: [  //  个人项目模块，可以省略
+                        moduleName: "基础信息",
+                        moduleType: 0,
+                        data: [
+                            { name: "姓名", value: "itagn" }
+                        ]
+                    },
                     {
-                        name: "个人项目xx系统",  //  项目名
-                        startTime: "2018/x",  //  项目起始时间
-                        endTime: "2018/x",  //  项目结束时间
-                        introduction: "私人项目介绍",  //  项目简介
-                        working: "工作量",  //  项目中的工作量
-                        url: "项目相关链接"  //  项目相关链接，可以省略
-                    }
-                ],
-                skills: [  //  技能模块，可以省略
+                        moduleName: "工作经验",
+                        moduleType: 1,
+                        data: [
+                            {
+                                name: "xxxx有限公司",
+                                startTime: "2018/x",
+                                endTime: "2018/x",
+                                miniModule: [
+                                    {
+                                        miniName: "工作内容",
+                                        data: [
+                                            "码代码"
+                                        ]
+                                    }
+                            ]
+                            }
+                        ]
+                    },
                     {
-                        name: "javascript",  //  技术
-                        introduction: "详细介绍"  //  详细介绍，可以省略
+                        moduleName: "团队项目",
+                        moduleType: 2,
+                        data: [
+                            {
+                                name: "团队项目xx系统",
+                                url: "项目相关链接",  //  可以省略
+                                startTime: "2018/x",
+                                endTime: "2018/x",
+                                miniModule: [
+                                    {
+                                        miniName: "项目介绍",
+                                        data: "团队项目介绍"
+                                    },
+                                    {
+                                        miniName: "项目职责",
+                                        data: "工作量"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        moduleName: "个人项目",
+                        moduleType: 2,
+                        data: [
+                            {
+                                name: "个人项目xx系统",
+                                url: "项目相关链接",  //  可以省略
+                                startTime: "2018/x",
+                                endTime: "2018/x",
+                                miniModule: [
+                                    {
+                                        miniName: "项目介绍",
+                                        data: "团队项目介绍"
+                                    },
+                                    {
+                                        miniName: "项目职责",
+                                        data: "工作量"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        moduleName: "技能树",
+                        moduleType: 3,
+                        data: [
+                            "javascript"
+                        ]
+                    },
+                    {
+                        moduleName: "自我评价",
+                        moduleType: 4,
+                        data: [
+                            "自我评价文章段落"
+                        ]
                     }
                 ]
             }

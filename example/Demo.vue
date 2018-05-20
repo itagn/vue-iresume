@@ -1,11 +1,12 @@
 <template>
   <div>
-    <iresume :pData="resumeData" class="resume1" :pNode="resumeNode1" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
-    <iresume :pData="resumeData" class="resume2" :pNode="resumeNode2" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
-    <iresume :pData="resumeData" class="resume3" :pNode="resumeNode3" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
-    <iresume :pData="resumeData" class="resume4" :pNode="resumeNode4" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
-    <iresume :pData="resumeData" class="resume5" :pNode="resumeNode5" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
-    <iresume :pData="resumeData" class="resume6" :pNode="resumeNode6" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData1" class="resume1" :pNode="resumeNode1" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData2" class="resume2" :pNode="resumeNode2" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData2" class="resume3" :pNode="resumeNode3" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData2" class="resume4" :pNode="resumeNode4" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData2" class="resume5" :pNode="resumeNode5" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData2" class="resume6" :pNode="resumeNode6" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <div class="top" @click="runToTop">Top</div>
   </div>
 </template>
 <script>
@@ -27,7 +28,8 @@ export default {
     Iresume
   },
   created () {
-    this.resumeData = resume.default
+    this.resumeData1 = resume.default
+    this.resumeData2 = resume.custom
     this.resumeNode1 = {
       className: '.resume1',
       theme: 'blue'
@@ -35,6 +37,7 @@ export default {
     this.resumeNode2 = {
       className: '.resume2',
       theme: 'pink',
+      leftColor: '#334455',
       leftBackground: bgImg
     }
     this.resumeNode3 = {
@@ -59,12 +62,41 @@ export default {
     }
   },
   methods: {
-    //  同步多个组件的z-index
     saveZIndex (data) {
+      //  同步多个组件的z-index
       this.zIndex = data
+    },
+    runToTop () {
+      //  回到顶部
+      let { scrollTop = 0, scrollHeight = 0 } = document.body
+      let interval = 20
+      let speed = scrollHeight / 50
+      let timer = setInterval(() => {
+        scrollTop -= speed
+        if (scrollTop <= 0 || speed === 0) {
+          scrollTop = 0
+          clearInterval(timer)
+        }
+        document.body.scrollTop = scrollTop
+      }, interval)
     }
   }
 }
 </script>
 <style>
+.top {
+  position: fixed;
+  left: 40px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10%;
+  background: #334455;
+  color: #fff;
+  font-family:  PingFang TC,Avenir Next,Helvetica,Arial,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+  z-index: 9999;
+}
 </style>
