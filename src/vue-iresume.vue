@@ -27,7 +27,7 @@
           <div class="iresume-box-content" v-else-if="modules.moduleType === 2">
             <ul>
               <li v-for="(data, j) in modules.data" :key="j">
-                {{ data }}
+                <div class="iresume-box-article">{{ data }}</div>
               </li>
             </ul>
           </div>
@@ -48,7 +48,11 @@
             <ul>
               <li v-for="(data, j) in modules.data" :key="j">
                 <div>
-                  <span class="iresume-project">{{ data.name }}</span>
+                  <span class="iresume-project">{{ data.name }}
+                    <span v-if="data.url" class="iresume-project-url">
+                      <a @click="hrefTo(data.url)">链接</a>
+                    </span>
+                  </span>
                   <span class="iresume-enterprise-time">({{ data.startTime }} ~ {{ data.endTime }})</span>
                 </div>
                 <div class="iresume-box-box" v-for="(mini, k) in data.miniModule" :key="k">
@@ -70,7 +74,7 @@
                 <div>
                   <span class="iresume-project">{{ data.name }}
                     <span v-if="data.url" class="iresume-project-url">
-                      <a @click="hrefTo(project.url)">链接</a>
+                      <a @click="hrefTo(data.url)">链接</a>
                     </span>
                   </span>
                   <span class="iresume-enterprise-time">({{ data.startTime }} ~ {{ data.endTime }})</span>

@@ -48,6 +48,7 @@
           "data": [
             {
               "name": "xxxx有限公司",
+              "url": "https://www.npmjs.com/package/vue-iresume",
               "startTime": "2017/7",
               "endTime": "至今",
               "miniModule": [
@@ -70,6 +71,7 @@
           "data": [
             {
               "name": "项目管理系统",
+              "url": "https://github.com/itagn",
               "startTime": "2017/8",
               "endTime": "2017/9",
               "miniModule": [
@@ -176,6 +178,7 @@
           "data": [
             {
               "name": "自定义",
+              "url": "https://www.npmjs.com/package/vue-iresume",
               "startTime": "2018/x",
               "endTime": "2018/x",
               "miniModule": [
@@ -198,6 +201,7 @@
           "data": [
             {
               "name": "自定义",
+              "url": "https://www.npmjs.com/package/vue-iresume",
               "startTime": "2018/x",
               "endTime": "2018/x",
               "miniModule": [
@@ -219,7 +223,7 @@
           "data": [
             {
               "name": "自定义",
-              "url": "https://github.com/itagn",
+              "url": "https://www.npmjs.com/package/vue-iresume",
               "startTime": "2018/x",
               "endTime": "2018/x",
               "miniModule": [

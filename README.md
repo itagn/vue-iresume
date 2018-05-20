@@ -93,6 +93,7 @@ export default {
                             data: [
                                 {
                                     name: "xxxx有限公司",
+                                    url: "相关链接",
                                     startTime: "2018/x",
                                     endTime: "2018/x",
                                     miniModule: [
@@ -112,7 +113,7 @@ export default {
                             data: [
                                 {
                                     name: "团队项目xx系统",
-                                    url: "项目相关链接",
+                                    url: "相关链接",
                                     startTime: "2018/x",
                                     endTime: "2018/x",
                                     miniModule: [
@@ -134,7 +135,7 @@ export default {
                             data: [
                                 {
                                     name: "个人项目xx系统",
-                                    url: "项目相关链接",
+                                    url: "相关链接",
                                     startTime: "2018/x",
                                     endTime: "2018/x",
                                     miniModule: [
@@ -230,6 +231,7 @@ export default {
                         data: [
                             {
                                 name: "xxxx有限公司",
+                                url: "相关链接",  //  可以省略
                                 startTime: "2018/x",
                                 endTime: "2018/x",
                                 miniModule: [
@@ -249,7 +251,7 @@ export default {
                         data: [
                             {
                                 name: "团队项目xx系统",
-                                url: "项目相关链接",  //  可以省略
+                                url: "相关链接",  //  可以省略
                                 startTime: "2018/x",
                                 endTime: "2018/x",
                                 miniModule: [
@@ -271,7 +273,7 @@ export default {
                         data: [
                             {
                                 name: "个人项目xx系统",
-                                url: "项目相关链接",  //  可以省略
+                                url: "相关链接",  //  可以省略
                                 startTime: "2018/x",
                                 endTime: "2018/x",
                                 miniModule: [

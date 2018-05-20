@@ -1,5 +1,6 @@
 .iresumex {
   margin: 5px 0 20px;
+  user-select: none;
 }
 .iresume {
   position: relative;
