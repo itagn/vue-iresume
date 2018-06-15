@@ -26,6 +26,10 @@
 ## DEMO
 [DEMO](https://itagn.github.io/vue-iresume/dist)  
 
+这里有最新的例子  
+
+[itagn的简历](https://itagn.github.io/resume)
+
 ## 安装
 ```text
 //  by npm
