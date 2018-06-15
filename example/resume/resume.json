@@ -8,10 +8,13 @@
           "moduleName": "联系方式",
           "moduleType": 0,
           "data": [
-            { "name": "电话", "value": "155xxxx2048" },
-            { "name": "邮箱", "value": "itagn@foxmail.com" },
-            { "name": "QQ", "value": "139xxxx847" },
-            { "name": "微博", "value": "一只彩笔东" }
+            { "name": "电话", "value": "155xxxxxxxx", "icon": "phone" },
+            { "name": "邮箱", "value": "itagn@foxmail.com", "icon": "email" },
+            { "name": "微博", "value": "一只彩笔东", "url": "https://weibo.com/3782707172/profile", "icon": "sina" },
+            { "name": "npm社区", "value": "itagn", "url": "https://www.npmjs.com/~itagn", "icon": "npm" },
+            { "name": "Github", "value": "itagn", "url": "https://github.com/itagn", "icon": "github" },
+            { "name": "知乎", "value": "东东么么哒", "url": "https://www.zhihu.com/people/cai-dong-17/activities", "icon": "zhihu" },
+            { "name": "贴吧", "value": "东东么么哒", "url": "http://tieba.baidu.com/home/main?id=3ec3e4b89ce4b89ce4b988e4b988e593924536", "icon": "tieba" }
           ]
         },
         {
@@ -19,6 +22,16 @@
           "moduleType": 1,
           "data": [
             "前端开发工程师"
+          ]
+        },
+        {
+          "moduleName": "技能树",
+          "moduleType": 2,
+          "data": [
+            "ES5 + ES6",
+            "Vue2 + Vue-router + Vuex",
+            "Koa2",
+            "Webpack"
           ]
         },
         {
@@ -35,11 +48,11 @@
           "moduleName": "基础信息",
           "moduleType": 0,
           "data": [
-            { "name": "姓名", "value": "itagn" },
-            { "name": "学历", "value": "本科" },
-            { "name": "毕业院校", "value": "电子科技大学" },
-            { "name": "毕业年月", "value": "2017/7" },
-            { "name": "专业", "value": "计算机科学与技术" }
+            { "name": "姓名", "value": "itagn", "icon": "user" },
+            { "name": "学历", "value": "本科", "icon": "education" },
+            { "name": "毕业院校", "value": "电子科技大学", "icon": "school" },
+            { "name": "毕业年月", "value": "2017/7", "icon": "time" },
+            { "name": "专业", "value": "计算机科学与技术", "icon": "major" }
           ]
         },
         {
@@ -47,18 +60,18 @@
           "moduleType": 1,
           "data": [
             {
-              "name": "xxxx有限公司",
-              "url": "https://www.npmjs.com/package/vue-iresume",
+              "name": "xx有限公司",
+              "url": "https://github.com/itagn/vue-iresume",
               "startTime": "2017/7",
               "endTime": "至今",
               "miniModule": [
                 {
                   "miniName": "工作内容",
                   "data": [
-                    "coding",
-                    "coding",
-                    "coding",
-                    "coding"
+                    "使用vue2进行前端页面的构建",
+                    "使用koa2进行后端接口开发",
+                    "与后端，测试，UI，产品经理联调修改bug",
+                    "旧项目的维护与新项目开发"
                   ]
                 }
               ]
@@ -68,12 +81,43 @@
         {
           "moduleName": "团队项目",
           "moduleType": 2,
+          "icon": "project",
           "data": [
             {
-              "name": "项目管理系统",
-              "url": "https://github.com/itagn",
-              "startTime": "2017/8",
-              "endTime": "2017/9",
+              "name": "xx系统",
+              "startTime": "2017/12",
+              "endTime": "2018/2",
+              "miniModule": [
+                {
+                  "miniName": "项目介绍",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "项目职责",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            },
+            {
+              "name": "xx系统",
+              "startTime": "2018/2",
+              "endTime": "2018/4",
+              "miniModule": [
+                {
+                  "miniName": "项目介绍",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "项目职责",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            },
+            {
+              "name": "xx系统",
+              "url": "https://github.com/itagn/vue-iresume",
+              "startTime": "2018/4",
+              "endTime": "2018/6",
               "miniModule": [
                 {
                   "miniName": "项目介绍",
@@ -90,6 +134,7 @@
         {
           "moduleName": "个人项目",
           "moduleType": 2,
+          "icon": "github2",
           "data": [
             {
               "name": "基于DES加密的即时通信聊天系统",
@@ -106,24 +151,23 @@
                   "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
                 }
               ]
+            },
+            {
+              "name": "东东么么哒 - 个人论坛",
+              "url": "https://github.com/itagn/dongdongmemeda",
+              "startTime": "2017/9",
+              "endTime": "2017/11",
+              "miniModule": [
+                {
+                  "miniName": "项目介绍",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "项目职责",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
             }
-          ]
-        },
-        {
-          "moduleName": "技能树",
-          "moduleType": 3,
-          "data": [
-            "javascript",
-            "nodejs",
-            "vuejs"
-          ]
-        },
-        {
-          "moduleName": "自我评价",
-          "moduleType": 4,
-          "data": [
-            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发",
-            "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
           ]
         }
       ]
@@ -138,9 +182,9 @@
           "moduleName": "自定义模块",
           "moduleType": 0,
           "data": [
+            { "name": "自定义", "value": "自定义", "url": "https://www.npmjs.com/package/vue-iresume" },
             { "name": "自定义", "value": "自定义" },
-            { "name": "自定义", "value": "自定义" },
-            { "name": "自定义", "value": "自定义" },
+            { "name": "自定义", "value": "自定义", "url": "https://www.npmjs.com/package/vue-iresume" },
             { "name": "自定义", "value": "自定义" }
           ]
         },
@@ -149,6 +193,15 @@
           "moduleType": 1,
           "data": [
             "前端开发工程师"
+          ]
+        },
+        {
+          "moduleName": "自定义模块",
+          "moduleType": 2,
+          "data": [
+            "自定义",
+            "自定义",
+            "自定义"
           ]
         },
         {
@@ -175,6 +228,7 @@
         {
           "moduleName": "自定义模块",
           "moduleType": 1,
+          "icon": "project",
           "data": [
             {
               "name": "自定义",
@@ -197,8 +251,25 @@
         },
         {
           "moduleName": "自定义模块",
+          "icon": "project",
           "moduleType": 2,
           "data": [
+            {
+              "name": "自定义",
+              "url": "https://www.npmjs.com/package/vue-iresume",
+              "startTime": "2018/x",
+              "endTime": "2018/x",
+              "miniModule": [
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            },
             {
               "name": "自定义",
               "url": "https://www.npmjs.com/package/vue-iresume",
@@ -219,8 +290,25 @@
         },
         {
           "moduleName": "自定义模块",
+          "icon": "project",
           "moduleType": 2,
           "data": [
+            {
+              "name": "自定义",
+              "url": "https://www.npmjs.com/package/vue-iresume",
+              "startTime": "2018/x",
+              "endTime": "2018/x",
+              "miniModule": [
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                },
+                {
+                  "miniName": "自定义",
+                  "data": "前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发"
+                }
+              ]
+            },
             {
               "name": "自定义",
               "url": "https://www.npmjs.com/package/vue-iresume",

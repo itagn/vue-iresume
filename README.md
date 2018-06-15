@@ -19,6 +19,7 @@
     6. 所有模块实现自定义内容，通过左右两边不同模块的moduleType来区分模块的样式
     7. 可以git clone或者通过npm安装后修改源码的themes.json配置你想要的主题风格
     8. 所有模块并非都需要加载，按照你的需求来填写对应模块的数据
+    9. 添加icon图标美化简历
 
 目前只封装了部分主题，你可以git clone到本地，然后修改theme文件夹的themes.json，制作私人主题  
 也可以使用组件提供的主题，主题名：blue、pink、orange、purple、yellow
@@ -61,7 +62,7 @@ export default {
                             moduleName: "联系方式",
                             moduleType: 0,
                             data: [
-                                { name: "电话", "value": "xxxxxxxxxx" }
+                                { name: "电话", value: "xxxxxxxxxx", icon: "phone", url: "https://github.com/itagn/vue-iresume" }
                             ]
                         },
                         {
@@ -69,6 +70,13 @@ export default {
                             moduleType: 1,
                             data: [
                                 "xx工程师"
+                            ]
+                        },
+                        {
+                            moduleName: "技能树",
+                            moduleType: 2,
+                            data: [
+                                "JavaScript"
                             ]
                         },
                         {
@@ -84,7 +92,7 @@ export default {
                             moduleName: "基础信息",
                             moduleType: 0,
                             data: [
-                                { name: "姓名", value: "itagn" }
+                                { name: "姓名", value: "itagn", icon: "user", url: "https://github.com/itagn/vue-iresume" }
                             ]
                         },
                         {
@@ -110,6 +118,7 @@ export default {
                         {
                             moduleName: "团队项目",
                             moduleType: 2,
+                            icon: "project",
                             data: [
                                 {
                                     name: "团队项目xx系统",
@@ -132,6 +141,7 @@ export default {
                         {
                             moduleName: "个人项目",
                             moduleType: 2,
+                            icon: "github",
                             data: [
                                 {
                                     name: "个人项目xx系统",
@@ -199,7 +209,7 @@ export default {
                         moduleName: "联系方式",
                         moduleType: 0,
                         data: [
-                            { name: "电话", "value": "xxxxxxxxxx" }
+                            { name: "电话", "value": "xxxxxxxxxx", icon: "xxx", url: "xxx" } // icon和url都不是必填的数据，提供了简历将更加完整
                         ]
                     },
                     {
@@ -222,12 +232,13 @@ export default {
                         moduleName: "基础信息",
                         moduleType: 0,
                         data: [
-                            { name: "姓名", value: "itagn" }
+                            { name: "姓名", value: "itagn", icon: "xxx" }
                         ]
                     },
                     {
                         moduleName: "工作经验",
                         moduleType: 1,
+                        icon: "xxx", // icon可以省略
                         data: [
                             {
                                 name: "xxxx有限公司",
@@ -248,6 +259,7 @@ export default {
                     {
                         moduleName: "团队项目",
                         moduleType: 2,
+                        icon: "xxx", // icon可以省略
                         data: [
                             {
                                 name: "团队项目xx系统",
@@ -270,6 +282,7 @@ export default {
                     {
                         moduleName: "个人项目",
                         moduleType: 2,
+                        icon: "xxx", // icon可以省略
                         data: [
                             {
                                 name: "个人项目xx系统",
@@ -329,6 +342,24 @@ export default {
             同步父组件的index数据，确认同一个页面多个简历能有正确的层级关系
             若一个页面只有一个简历时，则可以忽略该接口
 
+## 属性的取值
+
+- `theme`
+
+    value: blue / pink / orange / purple / yellow
+
+- `icon`
+
+    以下是可以设置的icon的值，根据首字母排序
+
+
+|company|education|email|github|github2|link|major|phone|project|qq|
+|---|---|---|---|---|---|---|---|---|---|---|
+|![company](./img/company.svg)|![education](./img/education.svg)|![email](./img/email.svg)|![github](./img/github.svg)|![github2](./img/github2.svg)|![link](./img/link.svg)|![major](./img/major.svg)|![phone](./img/phone.svg)|![project](./img/project.svg)|![qq](./img/qq.svg)|
+
+|school|sina|star|star2|tieba|time|user|zhihu|npm|
+|---|---|---|---|---|---|---|---|---|---|
+|![school](./img/school.svg)|![sina](./img/sina.svg)|![star](./img/star.svg)|![star2](./img/star2.svg)|![tieba](./img/tieba.svg)|![time](./img/time.svg)|![user](./img/user.svg)|![zhihu](./img/zhihu.svg)|![npm](./img/npm.svg)|
 
 ## 事件
 - `syncZIndex`

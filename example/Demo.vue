@@ -1,6 +1,6 @@
 <template>
   <div>
-    <iresume :pData="resumeData1" class="resume1" :pNode="resumeNode1" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
+    <iresume :pData="resumeData" class="resume1" :pNode="resumeNode1" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
     <iresume :pData="resumeData2" class="resume2" :pNode="resumeNode2" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
     <iresume :pData="resumeData2" class="resume3" :pNode="resumeNode3" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
     <iresume :pData="resumeData2" class="resume4" :pNode="resumeNode4" @syncZIndex="saveZIndex" :index="zIndex"></iresume>
@@ -11,7 +11,7 @@
 </template>
 <script>
 import { Iresume } from 'vue-iresume'
-import resume from './resume/resume.json'
+import resume from './resume/resume.json' 
 import bgImg from './img/bg.jpg'
 import bgImg1 from './img/bg1.jpg'
 import bgImg2 from './img/bg2.jpg'
@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       resumeData: {},
+      resumeData2: {},
       resumeNode1: {},
       resumeNode2: {},
       zIndex: 1
@@ -28,7 +29,7 @@ export default {
     Iresume
   },
   created () {
-    this.resumeData1 = resume.default
+    this.resumeData = resume.default
     this.resumeData2 = resume.custom
     this.resumeNode1 = {
       className: '.resume1',
@@ -68,16 +69,17 @@ export default {
     },
     runToTop () {
       //  回到顶部
-      let { scrollTop = 0, scrollHeight = 0 } = document.body
-      let interval = 20
-      let speed = scrollHeight / 50
+      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+      let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+      const interval = 20
+      const speed = scrollHeight / 25
       let timer = setInterval(() => {
         scrollTop -= speed
         if (scrollTop <= 0 || speed === 0) {
           scrollTop = 0
           clearInterval(timer)
         }
-        document.body.scrollTop = scrollTop
+        document.body.scrollTop = document.documentElement.scrollTop = scrollTop
       }, interval)
     }
   }

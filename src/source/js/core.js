@@ -70,22 +70,36 @@ export default {
       dom.style.webkitTransform = `scale(${this.scale})`
     },
     scaleToggle (dom, speed) {
-      let scrollFunc = e => {
+      const defaultFunc = e => {
         e = e || window.event
-        if (e.wheelDelta && event.ctrlKey) {
-          event.returnValue = false
+        if ((e.wheelDelta || e.detail) && e.ctrlKey) {
+          e.returnValue = false
+        }
+      }
+      document.addEventListener('DOMMouseScroll', defaultFunc, false)
+      window.onmousewheel = document.onmousewheel = defaultFunc
+      const scrollFunc = e => {
+        e = e || window.event
+        if (e.wheelDelta && e.ctrlKey) {
+          e.returnValue = false
           this.ctrlScroll(dom, e.wheelDelta > 0, speed)
-        } else if (e.detail && event.ctrlKey) {
-          event.returnValue = false
+        } else if (e.detail && e.ctrlKey) {
+          e.returnValue = false
           this.ctrlScroll(dom, e.detail > 0, speed)
         }
       }
       dom.addEventListener('DOMMouseScroll', scrollFunc, false)
-      dom.onmousewheel = dom.onmousewheel = scrollFunc
+      dom.onmousewheel = scrollFunc
     },
     initPos (dom) {
       dom.style.top = dom.scrollTop
       dom.style.left = dom.scrollLeft
+    },
+    getMidIcon (icon) {
+      return `icon-mid icon-${icon}`
+    },
+    getSmallIcon (icon) {
+      return `icon-small icon-${icon}`
     },
     domStyle () {
       let { className = '.iresumex', leftBackground = '', leftColor = '', rightBackground = '', rightColor = '' } = this.pNode

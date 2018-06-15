@@ -5,7 +5,7 @@
 .iresume {
   position: relative;
   width: 60%;
-  min-width: 768px;
+  min-width: 1000px;
   left: 0;
   right: 0;
   margin: auto;
@@ -31,7 +31,10 @@
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
-.iresume-box {
+.iresume-left .iresume-box {
+  margin: 0 5% 10% 5%;
+}
+.iresume-right .iresume-box {
   margin: 3% 5%;
 }
 .iresume-box-box {
@@ -44,14 +47,38 @@
 }
 .iresume-box .iresume-box-title {
   font-size: 1.4em;
-  display: inline-block;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.iresume-box-txt {
+  margin-left: 10px;
 }
 .iresume-box .iresume-box-content {
   padding: 0 0 0 3%;
   margin: 3% 0 0;
 }
+.iresume-box-content .concat-box {
+  height: 30px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.concat-box .concat-txt {
+  margin-left: 5px;
+}
+.concat-box .concat-icon {
+  margin-left: 7px;
+}
+.iresume-box-content .iresume-box-head {
+  font-size: 18px;
+}
+.iresume-box-content .box-bottom {
+  margin: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
 .iresume-box .iresume-enterprise-time{
-  font-size: 0.8em;
+  font-size: 16px;
 }
 .iresume-box-content .iresume-box-article {
   text-indent: 2em;
@@ -99,34 +126,18 @@ a:hover {
   font-size: 0.8em;
   line-height: 1.5em;
 }
-.iresume .iresume-project-url {
-  cursor: pointer;
+.iresume-project-title, .iresume-project-url {
+  margin-right: 25px;
 }
-
-@media screen and (max-width: 767px) {
-  .iresume {
-    width: 100%;
-    min-width: 450px;
-    left: 0;
-    right: 0;
-    font-size: 62.5%;
-    margin: auto;
-    display: flex;
-    display: -webkit-flex;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
-  .iresume > .iresume-left {
-    float: left;
-    flex: 4;
-    border-top: 1px solid #eee;
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-  }
-  .iresume > .iresume-right {
-    float: left;
-    flex: 6;
-    border-top: 1px solid #eee;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-  }
+.icon-mini {
+  font-size: 18px;
+}
+.icon-small {
+  font-size: 20px;
+}
+.icon-mid {
+  font-size: 30px;
+}
+.iresume-pointer {
+  cursor: pointer;
 }
