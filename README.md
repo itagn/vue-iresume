@@ -352,25 +352,15 @@ export default {
 
     以下是可以设置的icon的值，根据首字母排序
 
-- [company](https://github.com/itagn/vue-iresume/blob/master/img/company.svg)
-- [education](https://github.com/itagn/vue-iresume/blob/master/img/education.svg)
-- [email](https://github.com/itagn/vue-iresume/blob/master/img/email.svg)
-- [github](https://github.com/itagn/vue-iresume/blob/master/img/github.svg)
-- [github2](https://github.com/itagn/vue-iresume/blob/master/img/github2.svg)
-- [link](https://github.com/itagn/vue-iresume/blob/master/img/link.svg)
-- [major](https://github.com/itagn/vue-iresume/blob/master/img/major.svg)
-- [phone](https://github.com/itagn/vue-iresume/blob/master/img/phone.svg)
-- [project](https://github.com/itagn/vue-iresume/blob/master/img/project.svg)
-- [qq](https://github.com/itagn/vue-iresume/blob/master/img/qq.svg)
-- [school](https://github.com/itagn/vue-iresume/blob/master/img/school.svg)
-- [sina](https://github.com/itagn/vue-iresume/blob/master/img/sina.svg)
-- [star](https://github.com/itagn/vue-iresume/blob/master/img/star.svg)
-- [star2](https://github.com/itagn/vue-iresume/blob/master/img/star2.svg)
-- [tieba](https://github.com/itagn/vue-iresume/blob/master/img/tieba.svg)
-- [time](https://github.com/itagn/vue-iresume/blob/master/img/time.svg)
-- [user](https://github.com/itagn/vue-iresume/blob/master/img/user.svg)
-- [zhihu](https://github.com/itagn/vue-iresume/blob/master/img/zhihu.svg)
-- [npm](https://github.com/itagn/vue-iresume/blob/master/img/npm.svg)
+[company](https://github.com/itagn/vue-iresume/blob/master/img/company.svg) [education](https://github.com/itagn/vue-iresume/blob/master/img/education.svg) [email](https://github.com/itagn/vue-iresume/blob/master/img/email.svg) [github](https://github.com/itagn/vue-iresume/blob/master/img/github.svg)  
+
+[github2](https://github.com/itagn/vue-iresume/blob/master/img/github2.svg) [link](https://github.com/itagn/vue-iresume/blob/master/img/link.svg) [major](https://github.com/itagn/vue-iresume/blob/master/img/major.svg) [phone](https://github.com/itagn/vue-iresume/blob/master/img/phone.svg)  
+
+[project](https://github.com/itagn/vue-iresume/blob/master/img/project.svg) [qq](https://github.com/itagn/vue-iresume/blob/master/img/qq.svg) [school](https://github.com/itagn/vue-iresume/blob/master/img/school.svg) [sina](https://github.com/itagn/vue-iresume/blob/master/img/sina.svg)  
+
+[star](https://github.com/itagn/vue-iresume/blob/master/img/star.svg) [star2](https://github.com/itagn/vue-iresume/blob/master/img/star2.svg) [tieba](https://github.com/itagn/vue-iresume/blob/master/img/tieba.svg) [time](https://github.com/itagn/vue-iresume/blob/master/img/time.svg)  
+
+[user](https://github.com/itagn/vue-iresume/blob/master/img/user.svg) [zhihu](https://github.com/itagn/vue-iresume/blob/master/img/zhihu.svg) [npm](https://github.com/itagn/vue-iresume/blob/master/img/npm.svg)
 
 ## 事件
 - `syncZIndex`
