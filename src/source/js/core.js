@@ -127,6 +127,9 @@ export default {
         { dom: '.iresume .iresume-right .iresume-box-title', style: [
           { color: right.box.titleColor }
         ] },
+        { dom: '.iresume .iresume-right .icon-star2', style: [
+          { color: right.box.titleColor }
+        ] },
         { dom: '.iresume .iresume-right .iresume-hr', style: [
           { background: right.box.hrColor }
         ] },

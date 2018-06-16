@@ -1,6 +1,6 @@
 {
   "name": "vue-iresume",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a cute resume template with vuejs",
   "main": "index.js",
   "scripts": {
