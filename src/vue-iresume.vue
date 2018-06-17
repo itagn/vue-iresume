@@ -3,7 +3,7 @@
     <div class="iresume">
       <div class="iresume-left">
         <div class="iresume-avatars">
-          <img :src="user.avatars" alt="avatars">
+          <div class="iresume-img"></div>
         </div>
         <div class="iresume-username">
           {{ user.name }}的简历
@@ -17,12 +17,9 @@
             <ul>
               <li v-for="(data, j) in modules.data" :key="j" class="concat-box">
                 <i :class="getMidIcon(data.icon)" v-if="data.icon"/>
-                <span class="concat-txt">{{ data.name }}：
-                  <span v-if="data.url" @click="hrefTo(data.url)">
-                    {{ data.value }}
-                    <i class="icon-small icon-link iresume-pointer concat-icon" />
-                  </span>
-                  <span v-else>{{ data.value }}</span>
+                <span class="concat-txt">{{ data.name }}：{{ data.value }}</span>
+                <span v-if="data.url" @click="hrefTo(data.url)" class="concat-link">
+                  <i class="icon-small icon-link iresume-pointer icon-pos" />
                 </span>
               </li>
             </ul>
@@ -68,7 +65,7 @@
                       {{ data.name }}
                     </span>
                     <span v-if="data.url" class="iresume-project-url iresume-pointer">
-                      <i class="icon-link icon-small" @click="hrefTo(data.url)"/>
+                      <i class="icon-link icon-small icon-pos" @click="hrefTo(data.url)"/>
                     </span>
                   </span>
                   <span class="iresume-enterprise-time">{{ data.startTime }} ~ {{ data.endTime }}</span>
@@ -96,7 +93,7 @@
                       {{ data.name }}
                     </span>
                     <span v-if="data.url" class="iresume-project-url iresume-pointer">
-                      <i class="icon-link icon-small" @click="hrefTo(data.url)"/>
+                      <i class="icon-link icon-small icon-pos" @click="hrefTo(data.url)"/>
                     </span>
                   </span>
                   <span class="iresume-enterprise-time">{{ data.startTime }} ~ {{ data.endTime }}</span>

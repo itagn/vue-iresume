@@ -109,6 +109,7 @@ export default {
       if (leftColor === '') leftColor = left.fontColor
       if (rightBackground !== '') rightBg = `url(${rightBackground}) repeat`
       if (rightColor === '') rightColor = right.fontColor
+      const height = `${getDom('.iresume-avatars .iresume-img').offsetWidth}px`
       const domArr = [
         { dom: '.iresume .iresume-left', style: [
           { color: leftColor },
@@ -116,6 +117,13 @@ export default {
         ] },
         { dom: '.iresume .iresume-left .iresume-box-title', style: [
           { color: left.box.titleColor }
+        ] },
+        { dom: '.iresume .iresume-left .iresume-avatars', style: [
+          { height }
+        ] },
+        { dom: '.iresume .iresume-left .iresume-avatars .iresume-img', style: [
+          { backgroundImage: `url(${this.user.avatars})` },
+          { backgroundSize: '100% 100%' }
         ] },
         { dom: '.iresume .iresume-right', style: [
           { color: rightColor },
@@ -140,7 +148,7 @@ export default {
           { color: right.box.project.urlColor }
         ] },
         { dom: '.iresume .iresume-right .iresume-enterprise-time', style: [
-          { color: right.box.project.timeColor }
+          { color: right.box.project.titleColor }
         ] },
         { dom: '.iresume .iresume-right .iresume-mini-title', style: [
           { color: right.box.mini.titleColor }

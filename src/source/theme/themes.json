@@ -16,8 +16,7 @@
                 "hrColor": "#5ba4e5",
                 "project": {
                     "titleColor": "#00a1d6",
-                    "urlColor": "#9966cc",
-                    "timeColor": "#999"
+                    "urlColor": "#9966cc"
                 },
                 "mini": {
                     "titleColor": "#5ba4e5"
@@ -42,8 +41,7 @@
                 "hrColor": "#f01b2d",
                 "project": {
                     "titleColor": "#ff534d",
-                    "urlColor": "#00a1d6",
-                    "timeColor": "#999"
+                    "urlColor": "#00a1d6"
                 },
                 "mini": {
                     "titleColor": "#ff534d"
@@ -68,8 +66,7 @@
                 "hrColor": "#9966cc",
                 "project": {
                     "titleColor": "#7f1874",
-                    "urlColor": "#f17c67",
-                    "timeColor": "#999"
+                    "urlColor": "#f17c67"
                 },
                 "mini": {
                     "titleColor": "#8f1d78"
@@ -94,8 +91,7 @@
                 "hrColor": "#fcadc3",
                 "project": {
                     "titleColor": "#faabc1",
-                    "urlColor": "#00a1d6",
-                    "timeColor": "#999"
+                    "urlColor": "#00a1d6"
                 },
                 "mini": {
                     "titleColor": "#fbb0c5"
@@ -120,8 +116,7 @@
                 "hrColor": "#de8100",
                 "project": {
                     "titleColor": "#e9ae6a",
-                    "urlColor": "#00a1d6",
-                    "timeColor": "#999"
+                    "urlColor": "#00a1d6"
                 },
                 "mini": {
                     "titleColor": "#e9ae6a"

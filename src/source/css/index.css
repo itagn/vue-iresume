@@ -67,10 +67,8 @@
 .concat-box .concat-txt {
   margin-left: 5px;
 }
-.concat-box .concat-icon {
-  margin-left: 7px;
-}
 .iresume-box-content .iresume-box-head {
+  position: relative;
   font-size: 18px;
 }
 .iresume-box-content .box-bottom {
@@ -78,7 +76,10 @@
   border-bottom: 1px solid #ccc;
 }
 .iresume-box .iresume-enterprise-time{
-  font-size: 16px;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  font-size: 14px;
 }
 .iresume-box-content .iresume-box-article {
   text-indent: 2em;
@@ -90,11 +91,10 @@
   font-size: 1.2em;
 }
 .iresume-left .iresume-avatars {
-  padding: 20% 25% 5%;
-  width: 50%;
+  padding: 20% 25% 7%;
 }
-.iresume-avatars img {
-  width: 100%;
+.iresume-avatars .iresume-img {
+  height: 100%;
 }
 .iresume-left .iresume-username {
   font-size: 2em;
@@ -126,8 +126,8 @@ a:hover {
   font-size: 0.8em;
   line-height: 1.5em;
 }
-.iresume-project-title, .iresume-project-url {
-  margin-right: 25px;
+.iresume-project-title {
+  margin-right: 7px;
 }
 .icon-mini {
   font-size: 18px;
@@ -138,6 +138,17 @@ a:hover {
 .icon-mid {
   font-size: 30px;
 }
+.concat-link {
+  margin-left: 7px;
+  height: 20px;
+}
+.iresume-project-url, .concat-link {
+  position: relative;
+}
 .iresume-pointer {
   cursor: pointer;
+}
+.icon-pos {
+  position: absolute;
+  top: 0;
 }

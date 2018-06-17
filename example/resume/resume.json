@@ -8,12 +8,12 @@
           "moduleName": "联系方式",
           "moduleType": 0,
           "data": [
-            { "name": "电话", "value": "155xxxxxxxx", "icon": "phone" },
+            { "name": "电话", "value": "155xxxx9925", "icon": "phone" },
             { "name": "邮箱", "value": "itagn@foxmail.com", "icon": "email" },
-            { "name": "微博", "value": "一只彩笔东", "url": "https://weibo.com/3782707172/profile", "icon": "sina" },
-            { "name": "npm社区", "value": "itagn", "url": "https://www.npmjs.com/~itagn", "icon": "npm" },
             { "name": "Github", "value": "itagn", "url": "https://github.com/itagn", "icon": "github" },
+            { "name": "npm社区", "value": "itagn", "url": "https://www.npmjs.com/~itagn", "icon": "npm" },
             { "name": "知乎", "value": "东东么么哒", "url": "https://www.zhihu.com/people/cai-dong-17/activities", "icon": "zhihu" },
+            { "name": "微博", "value": "一只彩笔东", "url": "https://weibo.com/3782707172/profile", "icon": "sina" },
             { "name": "贴吧", "value": "东东么么哒", "url": "http://tieba.baidu.com/home/main?id=3ec3e4b89ce4b89ce4b988e4b988e593924536", "icon": "tieba" }
           ]
         },
