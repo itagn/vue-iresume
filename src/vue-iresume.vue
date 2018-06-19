@@ -16,7 +16,7 @@
           <div class="iresume-box-content" v-if="modules.moduleType === 0">
             <ul>
               <li v-for="(data, j) in modules.data" :key="j" class="concat-box">
-                <i :class="getMidIcon(data.icon)" v-if="data.icon"/>
+                <i :class="getSmallIcon(data.icon)" v-if="data.icon"/>
                 <span class="concat-txt">{{ data.name }}：{{ data.value }}</span>
                 <span v-if="data.url" @click="hrefTo(data.url)" class="concat-link">
                   <i class="icon-small icon-link iresume-pointer icon-pos" />
@@ -49,8 +49,8 @@
           <div class="iresume-hr"></div>
           <div class="iresume-box-content" v-if="modules.moduleType === 0">
             <ul>
-              <li v-for="(data, j) in modules.data" :key="j" class="concat-box">
-                <i :class="getMidIcon(data.icon)" v-if="data.icon"/>
+              <li v-for="(data, j) in modules.data" :key="j" class="info-box">
+                <i :class="getSmallIcon(data.icon)" v-if="data.icon"/>
                 <span class="concat-txt">{{ data.name }}：<span class="iresume-infomation">{{ data.value }}</span></span>
               </li>
             </ul>

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?kcon6i');
-  src:  url('fonts/icomoon.eot?kcon6i#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?kcon6i') format('truetype'),
-    url('fonts/icomoon.woff?kcon6i') format('woff'),
-    url('fonts/icomoon.svg?kcon6i#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?nffplb');
+  src:  url('fonts/icomoon.eot?nffplb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?nffplb') format('truetype'),
+    url('fonts/icomoon.woff?nffplb') format('woff'),
+    url('fonts/icomoon.svg?nffplb#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,25 +24,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-company:before {
+.icon-address:before {
   content: "\e900";
   color: #707070;
 }
-.icon-education:before {
+.icon-company:before {
   content: "\e901";
   color: #707070;
 }
-.icon-email:before {
+.icon-education:before {
   content: "\e902";
-  color: #fff;
+  color: #707070;
 }
-.icon-github:before {
+.icon-email:before {
   content: "\e903";
   color: #fff;
 }
-.icon-github2:before {
+.icon-github:before {
   content: "\e904";
-  color: #707070;
+  color: #fff;
 }
 .icon-link:before {
   content: "\e905";
@@ -52,50 +52,54 @@
   content: "\e906";
   color: #707070;
 }
-.icon-phone:before {
+.icon-npm:before {
   content: "\e907";
   color: #fff;
 }
-.icon-project:before {
+.icon-phone:before {
   content: "\e908";
+  color: #fff;
+}
+.icon-project:before {
+  content: "\e909";
   color: #707070;
 }
 .icon-qq:before {
-  content: "\e909";
+  content: "\e90a";
   color: #fff;
 }
 .icon-school:before {
-  content: "\e90a";
+  content: "\e90b";
+  color: #707070;
+}
+.icon-sex:before {
+  content: "\e90c";
   color: #707070;
 }
 .icon-sina:before {
-  content: "\e90b";
+  content: "\e90d";
   color: #fff;
 }
 .icon-star:before {
-  content: "\e90c";
-  color: #fff;
-}
-.icon-star2:before {
-  content: "\e90d";
-}
-.icon-tieba:before {
   content: "\e90e";
   color: #fff;
 }
-.icon-time:before {
+.icon-star2:before {
   content: "\e90f";
+}
+.icon-tieba:before {
+  content: "\e910";
+  color: #fff;
+}
+.icon-time:before {
+  content: "\e911";
   color: #707070;
 }
 .icon-user:before {
-  content: "\e910";
+  content: "\e912";
   color: #707070;
 }
 .icon-zhihu:before {
-  content: "\e911";
-  color: #fff;
-}
-.icon-npm:before {
-  content: "\e912";
+  content: "\e913";
   color: #fff;
 }

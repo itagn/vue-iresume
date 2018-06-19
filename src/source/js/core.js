@@ -109,7 +109,6 @@ export default {
       if (leftColor === '') leftColor = left.fontColor
       if (rightBackground !== '') rightBg = `url(${rightBackground}) repeat`
       if (rightColor === '') rightColor = right.fontColor
-      const height = `${getDom('.iresume-avatars .iresume-img').offsetWidth}px`
       const domArr = [
         { dom: '.iresume .iresume-left', style: [
           { color: leftColor },
@@ -117,9 +116,6 @@ export default {
         ] },
         { dom: '.iresume .iresume-left .iresume-box-title', style: [
           { color: left.box.titleColor }
-        ] },
-        { dom: '.iresume .iresume-left .iresume-avatars', style: [
-          { height }
         ] },
         { dom: '.iresume .iresume-left .iresume-avatars .iresume-img', style: [
           { backgroundImage: `url(${this.user.avatars})` },
