@@ -43,7 +43,7 @@
       <div class="iresume-right">
         <div class="iresume-box" v-for="(modules, i) in user.rightModules" :key="i">
           <div class="iresume-box-title">
-            <i class="icon-star2 icon-mid"/>
+            <i class="icon-star icon-mid"/>
             <span class="iresume-box-txt">{{ modules.moduleName }}</span>
           </div>
           <div class="iresume-hr"></div>
@@ -61,7 +61,7 @@
                 <div class="iresume-box-head">
                   <span class="iresume-project">
                     <span class="iresume-project-title">
-                      <i class="icon-company icon-small"/>
+                      <i :class="getSmallIcon(modules.icon)" v-if="modules.icon"/>
                       {{ data.name }}
                     </span>
                     <span v-if="data.url" class="iresume-project-url iresume-pointer">

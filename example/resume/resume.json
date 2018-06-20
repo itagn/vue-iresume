@@ -67,6 +67,7 @@
         {
           "moduleName": "工作经验",
           "moduleType": 1,
+          "icon": "company",
           "data": [
             {
               "name": "xx有限公司",
@@ -143,7 +144,7 @@
         {
           "moduleName": "个人项目",
           "moduleType": 2,
-          "icon": "github2",
+          "icon": "github",
           "data": [
             {
               "name": "基于DES加密的即时通信聊天系统",

@@ -30,7 +30,6 @@
 }
 .icon-company:before {
   content: "\e901";
-  color: #707070;
 }
 .icon-education:before {
   content: "\e902";
@@ -38,19 +37,13 @@
 }
 .icon-email:before {
   content: "\e903";
-  color: #fff;
 }
 .icon-github:before {
   content: "\e904";
-  color: #fff;
-}
-.icon-github2:before {
-  content: "\e904";
-  color: #707070;
 }
 .icon-link:before {
   content: "\e905";
-  color: #515151;
+  color: #334455;
 }
 .icon-major:before {
   content: "\e906";
@@ -58,19 +51,15 @@
 }
 .icon-npm:before {
   content: "\e907";
-  color: #fff;
 }
 .icon-phone:before {
   content: "\e908";
-  color: #fff;
 }
 .icon-project:before {
   content: "\e909";
-  color: #707070;
 }
 .icon-qq:before {
   content: "\e90a";
-  color: #fff;
 }
 .icon-school:before {
   content: "\e90b";
@@ -82,18 +71,12 @@
 }
 .icon-sina:before {
   content: "\e90d";
-  color: #fff;
 }
 .icon-star:before {
   content: "\e90e";
-  color: #fff;
-}
-.icon-star2:before {
-  content: "\e90f";
 }
 .icon-tieba:before {
   content: "\e910";
-  color: #fff;
 }
 .icon-time:before {
   content: "\e911";
@@ -105,5 +88,4 @@
 }
 .icon-zhihu:before {
   content: "\e913";
-  color: #fff;
 }
