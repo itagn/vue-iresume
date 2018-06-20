@@ -44,6 +44,10 @@
   content: "\e904";
   color: #fff;
 }
+.icon-github2:before {
+  content: "\e904";
+  color: #707070;
+}
 .icon-link:before {
   content: "\e905";
   color: #515151;
