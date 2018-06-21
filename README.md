@@ -353,17 +353,17 @@ export default {
         blue / pink / orange / purple / yellow
 
 - `icon`
-
-        以下是可以设置的icon的值，根据首字母排序
-
-
-|company|education|email|github|github2|link|major|phone|project|qq|
-|---|---|---|---|---|---|---|---|---|---|
-|[company](https://github.com/itagn/vue-iresume/blob/master/img/company.svg)|[education](https://github.com/itagn/vue-iresume/blob/master/img/education.svg)|[email](https://github.com/itagn/vue-iresume/blob/master/img/email.svg)|[github](https://github.com/itagn/vue-iresume/blob/master/img/github.svg)|[github2](https://github.com/itagn/vue-iresume/blob/master/img/github2.svg)|[link](https://github.com/itagn/vue-iresume/blob/master/img/link.svg)|[major](https://github.com/itagn/vue-iresume/blob/master/img/major.svg)|[phone](https://github.com/itagn/vue-iresume/blob/master/img/phone.svg)|[project](https://github.com/itagn/vue-iresume/blob/master/img/project.svg)|[qq](https://github.com/itagn/vue-iresume/blob/master/img/qq.svg)|
-
-|school|sina|star|sex|tieba|time|user|zhihu|npm|address|
-|---|---|---|---|---|---|---|---|---|
-|[school](https://github.com/itagn/vue-iresume/blob/master/img/school.svg)|[sina](https://github.com/itagn/vue-iresume/blob/master/img/sina.svg)|[star](https://github.com/itagn/vue-iresume/blob/master/img/star.svg)|[sex](https://github.com/itagn/vue-iresume/blob/master/img/sex.svg)|[tieba](https://github.com/itagn/vue-iresume/blob/master/img/tieba.svg)|[time](https://github.com/itagn/vue-iresume/blob/master/img/time.svg)|[user](https://github.com/itagn/vue-iresume/blob/master/img/user.svg)|[zhihu](https://github.com/itagn/vue-iresume/blob/master/img/zhihu.svg)|[npm](https://github.com/itagn/vue-iresume/blob/master/img/npm.svg)|[address](https://github.com/itagn/vue-iresume/blob/master/img/address.svg)
+你可以在链接 [ICON](https://itagn.github.io/vue-iresume/font/) 看所有的icon样式 
+    
+        以下的颜色为 #334455
+        icon-link
+        
+        以下的颜色为 #707070
+        icon-user | icon-time | icon-sex | icon-address | icon-school | icon-education | icon-major
+        
+        以下的颜色跟随字体颜色
+        icon-email | icon-github | icon-npm | icon-phone | icon-project |
+        icon-qq | icon-sina | icon-star | icon-tieba | icon-zhihu
 
 ## 事件
 - `syncZIndex`

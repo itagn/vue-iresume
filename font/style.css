@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?i4z0vg');
+  src:  url('fonts/icomoon.eot?i4z0vg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?i4z0vg') format('truetype'),
+    url('fonts/icomoon.woff?i4z0vg') format('woff'),
+    url('fonts/icomoon.svg?i4z0vg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-address:before {
+  content: "\e900";
+}
+.icon-company:before {
+  content: "\e901";
+}
+.icon-education:before {
+  content: "\e902";
+}
+.icon-email:before {
+  content: "\e903";
+}
+.icon-github:before {
+  content: "\e904";
+}
+.icon-link:before {
+  content: "\e905";
+}
+.icon-major:before {
+  content: "\e906";
+}
+.icon-npm:before {
+  content: "\e907";
+}
+.icon-phone:before {
+  content: "\e908";
+}
+.icon-project:before {
+  content: "\e909";
+}
+.icon-qq:before {
+  content: "\e90a";
+}
+.icon-school:before {
+  content: "\e90b";
+}
+.icon-sex:before {
+  content: "\e90c";
+}
+.icon-sina:before {
+  content: "\e90d";
+}
+.icon-star:before {
+  content: "\e90e";
+}
+.icon-tieba:before {
+  content: "\e910";
+}
+.icon-time:before {
+  content: "\e911";
+}
+.icon-user:before {
+  content: "\e912";
+}
+.icon-zhihu:before {
+  content: "\e913";
+}
