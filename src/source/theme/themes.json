@@ -1,10 +1,10 @@
 {
     "blue": {
         "left": {
-            "bgColor": "#00a1d6",
-            "fontColor": "#fff",
+            "bgColor": "#fff",
+            "fontColor": "#333",
             "box": {
-                "titleColor": "#fff"
+                "titleColor": "#00a1d6"
             }
         },
         "right": {
@@ -26,10 +26,10 @@
     },
     "orange": {
         "left": {
-            "bgColor": "#f17c67",
-            "fontColor": "#fff",
+            "bgColor": "#fff",
+            "fontColor": "#333",
             "box": {
-                "titleColor": "#fff"
+                "titleColor": "#f17c67"
             }
         },
         "right": {
@@ -51,10 +51,10 @@
     },
     "purple": {
         "left": {
-            "bgColor": "#9966cc",
-            "fontColor": "#fff",
+            "bgColor": "#fff",
+            "fontColor": "#333",
             "box": {
-                "titleColor": "#fff"
+                "titleColor": "#9966cc"
             }
         },
         "right": {
@@ -76,10 +76,10 @@
     },
     "pink": {
         "left": {
-            "bgColor": "#fcadc3",
-            "fontColor": "#fff",
+            "bgColor": "#fff",
+            "fontColor": "#333",
             "box": {
-                "titleColor": "#fff"
+                "titleColor": "#fcadc3"
             }
         },
         "right": {
@@ -101,10 +101,10 @@
     },
     "yellow": {
         "left": {
-            "bgColor": "#ba874c",
-            "fontColor": "#fff",
+            "bgColor": "#fff",
+            "fontColor": "#333",
             "box": {
-                "titleColor": "#fff"
+                "titleColor": "#ba874c"
             }
         },
         "right": {

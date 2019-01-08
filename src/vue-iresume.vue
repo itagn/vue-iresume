@@ -1,9 +1,9 @@
 <template>
   <div class="iresumex">
-    <div class="iresume">
-      <div class="iresume-left">
-        <div class="iresume-avatars">
-          <div class="iresume-img"></div>
+    <div :class="`iresume col${pNode.cols}`">
+      <div v-if="pNode.cols!==1" class="iresume-left">
+        <div v-if="pNode.avatars!==false" class="iresume-avatars">
+          <img :src="user.avatars" alt="avatars" class="iresume-img">
         </div>
         <div class="iresume-username">
           {{ user.name }}的简历
@@ -18,9 +18,7 @@
               <li v-for="(data, j) in modules.data" :key="j" class="concat-box">
                 <i :class="getSmallIcon(data.icon)" v-if="data.icon"/>
                 <span class="concat-txt">{{ data.name }}：{{ data.value }}</span>
-                <span v-if="data.url" @click="hrefTo(data.url)" class="concat-link">
-                  <i class="icon-small icon-link iresume-pointer icon-pos" />
-                </span>
+                <i v-if="data.url" @click="hrefTo(data.url)" :title="data.url" class="icon-small icon-link" />
               </li>
             </ul>
           </div>
@@ -41,17 +39,25 @@
         </div>
       </div>
       <div class="iresume-right">
+        <div v-if="pNode.cols===1 && pNode.avatars!==false" class="iresume-user-box">
+          <div class="iresume-avatars">
+            <img :src="user.avatars" alt="avatars" class="iresume-img">
+          </div>
+          <div class="iresume-username">
+            {{ user.name }}的简历
+          </div>
+        </div>
         <div class="iresume-box" v-for="(modules, i) in user.rightModules" :key="i">
           <div class="iresume-box-title">
             <i class="icon-star icon-mid"/>
             <span class="iresume-box-txt">{{ modules.moduleName }}</span>
           </div>
-          <div class="iresume-hr"></div>
           <div class="iresume-box-content" v-if="modules.moduleType === 0">
             <ul>
               <li v-for="(data, j) in modules.data" :key="j" class="info-box">
                 <i :class="getSmallIcon(data.icon)" v-if="data.icon"/>
                 <span class="concat-txt">{{ data.name }}：<span class="iresume-infomation">{{ data.value }}</span></span>
+                <i v-if="data.url" @click="hrefTo(data.url)" :title="data.url" class="icon-small icon-link" />
               </li>
             </ul>
           </div>
@@ -64,9 +70,7 @@
                       <i :class="getSmallIcon(modules.icon)" v-if="modules.icon"/>
                       {{ data.name }}
                     </span>
-                    <span v-if="data.url" class="iresume-project-url iresume-pointer">
-                      <i class="icon-link icon-small icon-pos" @click="hrefTo(data.url)"/>
-                    </span>
+                    <i v-if="data.url" :title="data.url" class="icon-link icon-small" @click="hrefTo(data.url)"/>
                   </span>
                   <span class="iresume-enterprise-time">{{ data.startTime }} ~ {{ data.endTime }}</span>
                 </div>
@@ -92,15 +96,15 @@
                       <i :class="getSmallIcon(modules.icon)" v-if="modules.icon"/>
                       {{ data.name }}
                     </span>
-                    <span v-if="data.url" class="iresume-project-url iresume-pointer">
-                      <i class="icon-link icon-small icon-pos" @click="hrefTo(data.url)"/>
-                    </span>
+                    <i v-if="data.url" :title="data.url" class="icon-link icon-small" @click="hrefTo(data.url)"/>
                   </span>
                   <span class="iresume-enterprise-time">{{ data.startTime }} ~ {{ data.endTime }}</span>
                 </div>
                 <div class="iresume-box-box" v-for="(mini, k) in data.miniModule" :key="k">
                   <div class="iresume-mini-title iresume-mini">{{ mini.miniName }}</div>
-                  <div class="iresume-box-article iresume-mini">{{ mini.data }}</div>
+                  <div class="iresume-box-article iresume-mini">
+                    <div v-for="(v, n) in mini.data" :key="n">{{ v }}</div>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -113,7 +117,7 @@
             </ol>
           </div>
           <div class="iresume-box-content" v-else-if="modules.moduleType === 4">
-            <div class="iresume-box-article iresume-mini" v-for="(val, k) in modules.data" :key="k">
+            <div class="iresume-box-article" v-for="(val, k) in modules.data" :key="k">
               {{ val }}
             </div>
           </div>

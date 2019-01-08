@@ -117,10 +117,6 @@ export default {
         { dom: '.iresume .iresume-left .iresume-box-title', style: [
           { color: left.box.titleColor }
         ] },
-        { dom: '.iresume .iresume-left .iresume-avatars .iresume-img', style: [
-          { backgroundImage: `url(${this.user.avatars})` },
-          { backgroundSize: '100% 100%' }
-        ] },
         { dom: '.iresume .iresume-right', style: [
           { color: rightColor },
           { background: rightBg }
@@ -129,13 +125,11 @@ export default {
           { color: right.box.infoColor }
         ] },
         { dom: '.iresume .iresume-right .iresume-box-title', style: [
-          { color: right.box.titleColor }
+          { color: right.box.titleColor },
+          { borderBottom: `1px solid ${right.box.hrColor}` }
         ] },
         { dom: '.iresume .iresume-right .icon-star2', style: [
           { color: right.box.titleColor }
-        ] },
-        { dom: '.iresume .iresume-right .iresume-hr', style: [
-          { background: right.box.hrColor }
         ] },
         { dom: '.iresume .iresume-right .iresume-project', style: [
           { color: right.box.project.titleColor }

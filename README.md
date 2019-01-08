@@ -15,7 +15,7 @@
     2. 简历支持鼠标滚轮方法、缩小
     3. 简历支持拖拽功能和层级关系
     4. 一个页面支持多个简历
-    5. 可以个性化设计简历
+    5. 可以个性化设计简历，一栏简历或者两栏简历
     6. 所有模块实现自定义内容，通过左右两边不同模块的moduleType来区分模块的样式
     7. 可以git clone或者通过npm安装后修改源码的themes.json配置你想要的主题风格
     8. 所有模块并非都需要加载，按照你的需求来填写对应模块的数据
@@ -136,7 +136,9 @@ export default {
                                         },
                                         {
                                             miniName: "项目职责",
-                                            data: "工作量"
+                                            data: [
+												"工作量"
+											]
                                         }
                                     ]
                                 }
@@ -159,7 +161,9 @@ export default {
                                         },
                                         {
                                             miniName: "项目职责",
-                                            data: "工作量"
+                                            data: [
+												"工作量"
+											]
                                         }
                                     ]
                                 }
@@ -332,6 +336,8 @@ export default {
         Default: {
             className: '',  //  如果你在组件上添加了id或者class属性，对应填写className，一个页面展示多个简历需要添加标识
             theme: 'blue',  //  简历主题风格，默认为blue，其他值pink，orange，purple，yellow
+			cols: 2, // 简历展示的风格，默认不为1，为1时简历展示一栏，为2时展示2栏【中间有分割线】，为3时展示2栏【中间无分割线】
+			avatars: true, // 是否展示头像，默认不为false【展示】，设置为true展示，设置为false不展示
             leftBackground: '',  //  简历左边背景，可以为图片地址或者颜色，默认使用主题风格
             leftColor: '',  //  简历左边字体颜色，默认使用主题风格
             rightBackground: '',  //  简历右边背景，可以为图片地址或者颜色，默认使用主题风格
