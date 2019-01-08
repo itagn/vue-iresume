@@ -28,8 +28,11 @@
 
 这里有最新的例子  
 
-[itagn的简历](https://itagn.github.io/resume)
+[1. itagn-两栏简历](https://itagn.github.io/resume)    
 
+[2. itagn-单栏简历](https://itagn.github.io/resume/simple/)    
+
+更详细的实际配置看[【这里】](https://github.com/itagn/resume/tree/master/template)
 ## 安装
 ```text
 //  by npm
@@ -137,8 +140,8 @@ export default {
                                         {
                                             miniName: "项目职责",
                                             data: [
-												"工作量"
-											]
+                                                "工作量"
+                                            ]
                                         }
                                     ]
                                 }
@@ -162,8 +165,8 @@ export default {
                                         {
                                             miniName: "项目职责",
                                             data: [
-												"工作量"
-											]
+                                                "工作量"
+                                            ]
                                         }
                                     ]
                                 }
@@ -281,7 +284,9 @@ export default {
                                     },
                                     {
                                         miniName: "项目职责",
-                                        data: "工作量"
+                                        data: [
+                                            "工作量"
+                                        ]
                                     }
                                 ]
                             }
@@ -304,7 +309,9 @@ export default {
                                     },
                                     {
                                         miniName: "项目职责",
-                                        data: "工作量"
+                                        data: [
+                                            "工作量"
+                                        ]
                                     }
                                 ]
                             }
@@ -336,8 +343,8 @@ export default {
         Default: {
             className: '',  //  如果你在组件上添加了id或者class属性，对应填写className，一个页面展示多个简历需要添加标识
             theme: 'blue',  //  简历主题风格，默认为blue，其他值pink，orange，purple，yellow
-			cols: 2, // 简历展示的风格，默认不为1，为1时简历展示一栏，为2时展示2栏【中间有分割线】，为3时展示2栏【中间无分割线】
-			avatars: true, // 是否展示头像，默认不为false【展示】，设置为true展示，设置为false不展示
+		    cols: 2, // 简历展示的风格，默认不为1，为1时简历展示一栏，为2时展示2栏【中间有分割线】，为3时展示2栏【中间无分割线】
+		    avatars: true, // 是否展示头像，默认不为false【展示】，设置为true展示，设置为false不展示
             leftBackground: '',  //  简历左边背景，可以为图片地址或者颜色，默认使用主题风格
             leftColor: '',  //  简历左边字体颜色，默认使用主题风格
             rightBackground: '',  //  简历右边背景，可以为图片地址或者颜色，默认使用主题风格
